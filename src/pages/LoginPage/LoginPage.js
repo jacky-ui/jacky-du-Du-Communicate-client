@@ -5,6 +5,35 @@ import "./LoginPage.scss";
 import axios from "axios";
 
 class LoginPage extends Component {
+    state = {
+        errors: "",
+        pass: false
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const username = e.target.username.value;
+        const password = e.target.password.value;
+        console.log(username, password);
+
+        axios
+            .post("http://localhost:8080/users/login", {
+                username, 
+                password
+            })
+            .then((response) => {
+                sessionStorage.setItem("token", response.data.token);
+                this.setState({
+                pass: true,
+                });
+            })
+            .catch((err) => {
+                this.setState({
+                error: err.response.data,
+                });
+            })
+    }
+
     render() {
         return (
             <article className="container">
@@ -18,6 +47,7 @@ class LoginPage extends Component {
                         <button className="login__form--btn">LOGIN</button>
                     </form>
 
+                    {this.state.pass && <Redirect to="/" />}
 
                     <span className="login__divider"></span>
                     <Link to="/signup">
