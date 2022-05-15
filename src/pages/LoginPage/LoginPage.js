@@ -22,6 +22,7 @@ class LoginPage extends Component {
                 password
             })
             .then((response) => {
+                console.log(response)
                 sessionStorage.setItem("token", response.data.token);
                 this.setState({
                 pass: true,
@@ -40,7 +41,7 @@ class LoginPage extends Component {
                 <h1 className="container__header">Du-Communicate</h1>
     
                 <main className="login">
-                    <h2 className="login__title">Login</h2>
+                    <h2 className="login__signup--title">Login</h2>
                     <form className="login__form" onSubmit={this.handleSubmit}>
                         <Inputs type="text" name="username" label="USERNAME"/>
                         <Inputs type="password" name="password" label="PASSWORD"/>

@@ -22,7 +22,7 @@
     margin-right: auto;
     width: 30rem;
 
-    &__title {
+    &__signup--title {
         @include subheader;
         margin-top: 0rem;
     }
@@ -38,6 +38,7 @@
         &:hover {
             background-color: $Black;
             color: $White;
+            cursor: pointer;
         }
     }
     &__divider {
@@ -58,6 +59,7 @@
         &:hover {
             background-color: $Orange;
             color: $White;
+            cursor: pointer;
         }
     }
 }
