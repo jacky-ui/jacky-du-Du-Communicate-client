@@ -1,0 +1,58 @@
+@use "../../styles/global.scss" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    height: 3.5rem;
+
+    &__logo {
+        @include page-header;
+        margin: 0rem;
+        color: black;
+    }
+
+    &__link--underline {
+        text-decoration: none;
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &--home {
+            @include subheader;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &--profileimg {
+            display: block;
+            background-color: black;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+        }
+
+        &--chat {
+            @include subheader;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &--dropdwn {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
