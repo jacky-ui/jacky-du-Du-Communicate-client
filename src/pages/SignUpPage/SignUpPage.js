@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import Inputs from "../../components/Inputs/Inputs";
 import "./SignUpPage.scss";
+import { Link } from "react-router-dom";
 
 class SignUpPage extends Component {
     state = {
@@ -40,7 +41,6 @@ class SignUpPage extends Component {
     };
 
     render() {
-        console.log(this.props);
         return (
             <section className="container">
                 <h1 className="container__header">Du-Communicate</h1>
@@ -53,7 +53,7 @@ class SignUpPage extends Component {
                         <Inputs type="text" name="username" label="Username"/>
                         <Inputs type="password" name="password" label="Password"/>
                         <button className="signup__form--btn">Sign Up!</button>
-                        {this.state.pass && <h2 className="signup__state">Awesome! You will be redirected to login!</h2>}
+                        {this.state.pass && <Link to="/login"><h2 className="signup__state">Awesome! Click the link to return to login!</h2></Link>}
                         {this.state.empty && <h2 className="signup__state">{this.state.empty}</h2>}
                         {this.state.error && <h2 className="signup__state">{this.state.error}</h2>}
                     </form>
