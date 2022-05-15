@@ -38,6 +38,7 @@
         &:hover {
             background-color: $Black;
             color: $White;
+            cursor: pointer;
         }
     }
     &__divider {
@@ -58,6 +59,7 @@
         &:hover {
             background-color: $Orange;
             color: $White;
+            cursor: pointer;
         }
     }
 }
