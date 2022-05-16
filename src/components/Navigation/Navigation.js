@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import dropDown from '../../assets/images/icons/dropdown-menu-icon-7.jpg';
 import './Navigation.scss';
 
-function Navigation () {
+function Navigation (props) {
     return (
         <nav className="nav">
             <Link to="/" className="nav__link--underline">
@@ -15,7 +15,11 @@ function Navigation () {
                 <Link to="/chatroom" className="nav__link--underline">
                     <h3 className="nav__items--chat">CHATROOM</h3>
                 </Link>
-                <div className="nav__items--profileimg"></div>
+                <img 
+                    src={props.profile}
+                    className="nav__items--profileimg"
+                    alt="user profile"
+                />
                 <img 
                     src={dropDown}
                     alt=" "

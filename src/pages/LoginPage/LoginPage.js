@@ -14,7 +14,6 @@ class LoginPage extends Component {
         e.preventDefault();
         const username = e.target.username.value;
         const password = e.target.password.value;
-        console.log(username, password);
 
         axios
             .post("http://localhost:8080/users/login", {
