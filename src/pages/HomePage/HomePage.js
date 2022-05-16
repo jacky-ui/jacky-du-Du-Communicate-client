@@ -8,7 +8,8 @@ import "./HomePage.scss";
 class HomePage extends Component {
     state = {
         user: null,
-        failedLogin: false
+        failedLogin: false,
+        welcomeUser: null
     }
 
     componentDidMount() {
@@ -21,8 +22,17 @@ class HomePage extends Component {
 
         const decodedUser = jwt_decode(token);
         const userId = decodedUser.id;
-        console.log(decodedUser);
-        console.log(userId);
+
+        axios
+            .get(`http://localhost:8080/dashboard/${userId}`, {
+                headers: {
+                    Authorization: "Bearer" + token
+                }
+            })
+            .then((response) => {
+                const username = response.data.username;
+                this.setState({ welcomeUser: username});
+            });
     }
 
     render() {
@@ -39,6 +49,7 @@ class HomePage extends Component {
         return (
             <>
                 <Navigation />
+                <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
             </>
         )
     }
