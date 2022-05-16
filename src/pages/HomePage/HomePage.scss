@@ -30,3 +30,22 @@
         }
     }
 }
+
+.comments {
+    display: flex;
+    justify-content: center; 
+    gap: 1rem;
+
+    &__profile {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+    }
+
+    &__comment {
+        border-radius: 5px;
+        border-style: 1px;
+        width: 15rem;
+        padding-left: 1rem;
+    }
+}

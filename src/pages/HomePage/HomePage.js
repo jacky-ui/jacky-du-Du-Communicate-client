@@ -51,8 +51,19 @@ class HomePage extends Component {
         }
         return (
             <>
-                <Navigation profile={this.state.profilePic}/>
+                <header>
+                    <Navigation profile={this.state.profilePic}/>
+                </header>
                 <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
+                <main className="container">
+                    <section className="comments">
+                        <img 
+                            src={this.state.profilePic}
+                            className="comments__profile"
+                        />
+                        <input className="comments__comment" type="text"></input>
+                    </section>
+                </main>
             </>
         )
     }
