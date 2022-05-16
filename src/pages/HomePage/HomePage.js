@@ -9,7 +9,8 @@ class HomePage extends Component {
     state = {
         user: null,
         failedLogin: false,
-        welcomeUser: null
+        welcomeUser: null,
+        profilePic: null
     }
 
     componentDidMount() {
@@ -30,8 +31,10 @@ class HomePage extends Component {
                 }
             })
             .then((response) => {
-                const username = response.data.username;
+                const { username, profile } = response.data;
+                console.log(profile);
                 this.setState({ welcomeUser: username});
+                this.setState({ profilePic: profile })
             });
     }
 
@@ -48,7 +51,7 @@ class HomePage extends Component {
         }
         return (
             <>
-                <Navigation />
+                <Navigation profile={this.state.profilePic}/>
                 <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
             </>
         )
