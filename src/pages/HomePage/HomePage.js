@@ -61,7 +61,7 @@ class HomePage extends Component {
                             src={this.state.profilePic}
                             className="comments__profile"
                         />
-                        <input className="comments__comment" type="text"></input>
+                        <input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>
                     </section>
                 </main>
             </>

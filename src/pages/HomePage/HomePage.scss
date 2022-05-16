@@ -35,6 +35,11 @@
     display: flex;
     justify-content: center; 
     gap: 1rem;
+    border: 1px solid $Orange;
+    border-radius: 4px;
+    padding: 1rem 1rem;
+    width: fit-content;
+    margin: 0 auto;
 
     &__profile {
         width: 2.5rem;
@@ -47,5 +52,6 @@
         border-style: 1px;
         width: 15rem;
         padding-left: 1rem;
+        @include body-medium;
     }
 }
