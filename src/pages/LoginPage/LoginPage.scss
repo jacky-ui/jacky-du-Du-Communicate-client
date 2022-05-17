@@ -62,4 +62,8 @@
             cursor: pointer;
         }
     }
+    &__state {
+        @include body-medium;
+        width: 80%;
+    }
 }

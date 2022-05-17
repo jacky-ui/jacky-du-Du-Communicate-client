@@ -45,6 +45,7 @@ class LoginPage extends Component {
                         <Inputs type="text" name="username" label="USERNAME"/>
                         <Inputs type="password" name="password" label="PASSWORD"/>
                         <button className="login__form--btn">LOGIN</button>
+                        {this.state.errors && <h3 className="login__state">Failed login attempt</h3>}
                     </form>
 
                     {this.state.pass && <Redirect to="/" />}
