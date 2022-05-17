@@ -34,7 +34,6 @@ class HomePage extends Component {
             })
             .then((response) => {
                 const { username, profile } = response.data;
-                console.log(profile);
                 this.setState({ welcomeUser: username});
                 this.setState({ profilePic: profile })
             });
@@ -58,7 +57,7 @@ class HomePage extends Component {
                 </header>
                 <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
                 <main className="container">
-                    <section className="">
+                    <section className="container__comments">
                         <div className="comments">
                             <img 
                                 src={this.state.profilePic}
