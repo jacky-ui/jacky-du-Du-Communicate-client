@@ -5,6 +5,7 @@ import Navigation from "../../components/Navigation/Navigation";
 import jwt_decode from "jwt-decode";
 import "./HomePage.scss";
 import Posts from "../../components/Posts/Posts";
+import SideNavigation from "../../components/SideNavigation/SideNavigation";
 
 class HomePage extends Component {
     state = {
@@ -68,6 +69,7 @@ class HomePage extends Component {
                         </div>
                         <Posts />
                     </section>
+                    <SideNavigation />
                 </main>
             </>
         )
