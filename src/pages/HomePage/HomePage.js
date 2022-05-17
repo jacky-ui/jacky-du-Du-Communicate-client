@@ -5,6 +5,7 @@ import Navigation from "../../components/Navigation/Navigation";
 import jwt_decode from "jwt-decode";
 import "./HomePage.scss";
 import Posts from "../../components/Posts/Posts";
+import SideNavigation from "../../components/SideNavigation/SideNavigation";
 
 class HomePage extends Component {
     state = {
@@ -33,10 +34,17 @@ class HomePage extends Component {
             })
             .then((response) => {
                 const { username, profile } = response.data;
-                console.log(profile);
                 this.setState({ welcomeUser: username});
                 this.setState({ profilePic: profile })
             });
+    }
+
+    handleLogout = () => {
+        sessionStorage.removeItem("token");
+        this.setState({
+            user: null,
+            failedLogin: true
+        })
     }
 
     render() {
@@ -57,7 +65,7 @@ class HomePage extends Component {
                 </header>
                 <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
                 <main className="container">
-                    <section className="">
+                    <section className="container__comments">
                         <div className="comments">
                             <img 
                                 src={this.state.profilePic}
@@ -68,6 +76,7 @@ class HomePage extends Component {
                         </div>
                         <Posts />
                     </section>
+                    <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
             </>
         )
