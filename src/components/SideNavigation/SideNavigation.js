@@ -4,7 +4,6 @@ import supportIcon from "../../assets/images/icons/support.png";
 import logoutIcon from "../../assets/images/icons/logout.png";
 
 function SideNavigation(props) {
-    console.log(props);
     return (
         <section className="side">
             <ul className="side__lists">
