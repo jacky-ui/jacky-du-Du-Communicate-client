@@ -39,6 +39,14 @@ class HomePage extends Component {
             });
     }
 
+    handleLogout = () => {
+        sessionStorage.removeItem("token");
+        this.setState({
+            user: null,
+            failedLogin: true
+        })
+    }
+
     render() {
         if (this.state.failedLogin) {
             return(
@@ -68,7 +76,7 @@ class HomePage extends Component {
                         </div>
                         <Posts />
                     </section>
-                    <SideNavigation />
+                    <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
             </>
         )
