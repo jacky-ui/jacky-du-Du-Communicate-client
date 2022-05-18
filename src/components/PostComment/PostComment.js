@@ -30,6 +30,7 @@ class PostComment extends Component {
         //     })
     }
     render() {
+        const { username, profilePic} = this.props;
         return (
             <Popup trigger={<input type="text" placeholder="Posts? Feelings?"></input>} modal nested>
                 {close => (
@@ -39,10 +40,10 @@ class PostComment extends Component {
                             <div className="popup__comments--container">
                                 <img 
                                     className="popup__comments--profile" 
-                                    src={this.props.profilePic} 
+                                    src={profilePic} 
                                     alt="user profile"
                                 />
-                                <span className="popup__comments--username">{this.props.username}</span>
+                                <span className="popup__comments--username">{username}</span>
                             </div>
                             <textarea className="popup__comments--comment" name="comments"></textarea>
                             <button className="popup__comments--btn">POST!</button>
