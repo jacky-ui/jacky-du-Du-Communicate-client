@@ -73,7 +73,7 @@ class HomePage extends Component {
                                 className="comments__profile"
                                 alt="user profile"
                             />
-                            <PostComment profilePic={this.state.profilePic}/>
+                            <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser}/>
                             {/*<input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>*/}
                         </div>
                         <Posts />
