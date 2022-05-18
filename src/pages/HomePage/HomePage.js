@@ -13,7 +13,8 @@ class HomePage extends Component {
         user: null,
         failedLogin: false,
         welcomeUser: null,
-        profilePic: null
+        profilePic: null,
+        userId: null
     }
 
     componentDidMount() {
@@ -34,9 +35,10 @@ class HomePage extends Component {
                 }
             })
             .then((response) => {
-                const { username, profile } = response.data;
+                const { username, profile, id } = response.data;
                 this.setState({ welcomeUser: username});
-                this.setState({ profilePic: profile })
+                this.setState({ profilePic: profile });
+                this.setState({userId: id});
             });
     }
 
@@ -73,7 +75,7 @@ class HomePage extends Component {
                                 className="comments__profile"
                                 alt="user profile"
                             />
-                            <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser}/>
+                            <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
                             {/*<input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>*/}
                         </div>
                         <Posts />

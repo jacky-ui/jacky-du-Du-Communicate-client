@@ -10,24 +10,21 @@ class PostComment extends Component {
 
     handleSubmitComment = (e) => {
         e.preventDefault();
-        // const profilePicture = props.profilePic;
-        // const comments = e.target.comments.value
-        // console.log(profilePicture, comments);
+
         if (e.target.comments.value === "") {
-            console.log("Wrong");
             this.setState({
                 noComments: "Please enter a comment to post!"
             })
             return;
         }
 
-        console.log("correct");
-
-        // axios
-        //     .post("http://localhost:8080/comments", {
-        //         profilePicture: props.profilePic,
-        //         comments: e.target.comments.value
-        //     })
+        axios
+            .post("http://localhost:8080/comments/post", {
+                profilePicture: this.props.profilePic,
+                comments: e.target.comments.value,
+                userId: this.props.userId,
+                username: this.props.username
+            })
     }
     render() {
         const { username, profilePic} = this.props;
@@ -49,6 +46,7 @@ class PostComment extends Component {
                             <textarea className="popup__comments--comment" name="comments"></textarea>
                             <button className="popup__comments--btn">POST!</button>
 
+                            {/* If textarea empty, message will render */}
                             {this.state.noComments && <h2 className="error">{this.state.noComments}</h2>}
 
                         </form>
