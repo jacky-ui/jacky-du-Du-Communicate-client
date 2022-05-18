@@ -35,6 +35,7 @@ class PostComment extends Component {
             <Popup trigger={<input type="text" placeholder="Posts? Feelings?"></input>} modal nested>
                 {close => (
                     <div className="popup">
+                        <button className="popup__close" onClick={close}>&times;</button>
                         <h2 className="popup__title">Make a post!</h2>
                         <form className="popup__comments" onSubmit={this.handleSubmitComment}>
                             <div className="popup__comments--container">
@@ -48,7 +49,7 @@ class PostComment extends Component {
                             <textarea className="popup__comments--comment" name="comments"></textarea>
                             <button className="popup__comments--btn">POST!</button>
 
-                            {this.state.noComments && <h2 className="noname">{this.state.noComments}</h2>}
+                            {this.state.noComments && <h2 className="error">{this.state.noComments}</h2>}
 
                         </form>
                     </div>
