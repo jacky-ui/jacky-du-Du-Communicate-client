@@ -1,18 +1,24 @@
 import Popup from 'reactjs-popup';
+import { Component } from "react";
 import axios from 'axios';
 import "./PostComment.scss";
 
-function PostComment(props) {
-    const handleSubmitComment = (e) => {
+class PostComment extends Component {
+    state = {
+        noComments: " "
+    }
+
+    handleSubmitComment = (e) => {
         e.preventDefault();
         // const profilePicture = props.profilePic;
         // const comments = e.target.comments.value
         // console.log(profilePicture, comments);
         if (e.target.comments.value === "") {
             console.log("Wrong");
-            return(
-                <span>Please enter in comments to post!</span>
-            ) 
+            this.setState({
+                noComments: "Please enter a comment to post!"
+            })
+            return;
         }
 
         console.log("correct");
@@ -23,27 +29,32 @@ function PostComment(props) {
         //         comments: e.target.comments.value
         //     })
     }
-    return (
-        <Popup trigger={<input type="text" placeholder="Posts? Feelings?"></input>} modal nested>
-            {close => (
-                <div className="popup">
-                    <h2 className="popup__title">Make a post!</h2>
-                    <form className="popup__comments" onSubmit={handleSubmitComment}>
-                        <div className="popup__comments--container">
-                            <img 
-                                className="popup__comments--profile" 
-                                src={props.profilePic} 
-                                alt="user profile"
-                            />
-                            <span className="popup__comments--username">{props.username}</span>
-                        </div>
-                        <textarea className="popup__comments--comment" name="comments"></textarea>
-                        <button className="popup__comments--btn">POST!</button>
-                    </form>
-                </div>
-            )}
-        </Popup>
-    )
+    render() {
+        return (
+            <Popup trigger={<input type="text" placeholder="Posts? Feelings?"></input>} modal nested>
+                {close => (
+                    <div className="popup">
+                        <h2 className="popup__title">Make a post!</h2>
+                        <form className="popup__comments" onSubmit={this.handleSubmitComment}>
+                            <div className="popup__comments--container">
+                                <img 
+                                    className="popup__comments--profile" 
+                                    src={this.props.profilePic} 
+                                    alt="user profile"
+                                />
+                                <span className="popup__comments--username">{this.props.username}</span>
+                            </div>
+                            <textarea className="popup__comments--comment" name="comments"></textarea>
+                            <button className="popup__comments--btn">POST!</button>
+
+                            {this.state.noComments && <h2 className="noname">{this.state.noComments}</h2>}
+
+                        </form>
+                    </div>
+                )}
+            </Popup>
+        )
+    }
 }
 
 export default PostComment;
