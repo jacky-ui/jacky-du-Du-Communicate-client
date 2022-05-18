@@ -16,8 +16,9 @@ class PostComment extends Component {
                             src={this.props.profilePic} 
                             alt="user profile"
                         />
-                        <input className="popup__comments--comment" type="textarea"></input>
-                        <button>POST!</button>
+                        <input 
+                            className="popup__comments--comment" type="textarea"></input>
+                        <button className="popup__comments--btn">POST!</button>
                     </div>
                 </div>
             )}
