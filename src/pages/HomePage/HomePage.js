@@ -6,6 +6,7 @@ import jwt_decode from "jwt-decode";
 import "./HomePage.scss";
 import Posts from "../../components/Posts/Posts";
 import SideNavigation from "../../components/SideNavigation/SideNavigation";
+import PostComment from "../../components/PostComment/PostComment";
 
 class HomePage extends Component {
     state = {
@@ -72,7 +73,8 @@ class HomePage extends Component {
                                 className="comments__profile"
                                 alt="user profile"
                             />
-                            <input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>
+                            <PostComment profilePic={this.state.profilePic}/>
+                            {/*<input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>*/}
                         </div>
                         <Posts />
                     </section>
