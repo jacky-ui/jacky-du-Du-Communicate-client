@@ -14,7 +14,8 @@ class HomePage extends Component {
         failedLogin: false,
         welcomeUser: null,
         profilePic: null,
-        userId: null
+        userId: null,
+        comments: null
     }
 
     componentDidMount() {
@@ -48,7 +49,11 @@ class HomePage extends Component {
                 }
             })
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
+                const commentsJSON = response.data;
+                this.setState({
+                    comments: commentsJSON
+                })
             });
     }
 
@@ -86,9 +91,8 @@ class HomePage extends Component {
                                 alt="user profile"
                             />
                             <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
-                            {/*<input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>*/}
                         </div>
-                        <Posts />
+                        <Posts comments={this.state.commentsJSON}/>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
