@@ -40,6 +40,16 @@ class HomePage extends Component {
                 this.setState({ profilePic: profile });
                 this.setState({userId: id});
             });
+
+        axios
+            .get("http://localhost:8080/comments", {
+                headers: {
+                    Authorization: "Bearer" + token
+                }
+            })
+            .then((response) => {
+                console.log(response.data);
+            });
     }
 
     handleLogout = () => {
