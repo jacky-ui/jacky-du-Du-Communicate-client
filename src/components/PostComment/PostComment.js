@@ -9,8 +9,6 @@ class PostComment extends Component {
     }
 
     handleSubmitComment = (e) => {
-        e.preventDefault();
-
         if (e.target.comments.value === "") {
             this.setState({
                 noComments: "Please enter a comment to post!"

@@ -14,7 +14,8 @@ class HomePage extends Component {
         failedLogin: false,
         welcomeUser: null,
         profilePic: null,
-        userId: null
+        userId: null,
+        comments: null
     }
 
     componentDidMount() {
@@ -40,6 +41,20 @@ class HomePage extends Component {
                 this.setState({ profilePic: profile });
                 this.setState({userId: id});
             });
+
+        axios
+            .get("http://localhost:8080/comments", {
+                headers: {
+                    Authorization: "Bearer" + token
+                }
+            })
+            .then((response) => {
+                // console.log(response.data);
+                const commentsJSON = response.data;
+                this.setState({
+                    comments: commentsJSON
+                })
+            });
     }
 
     handleLogout = () => {
@@ -60,7 +75,15 @@ class HomePage extends Component {
                     </Link>
                 </div>
             )
-        }
+        };
+        if (!this.state.comments) {
+            return (
+            <section>
+                  <p>Loading...</p>
+            </section>
+            )
+          }
+
         return (
             <>
                 <header>
@@ -76,9 +99,19 @@ class HomePage extends Component {
                                 alt="user profile"
                             />
                             <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
-                            {/*<input className="comments__comment" type="text" placeholder="Posts? Feelings?"></input>*/}
                         </div>
-                        <Posts />
+                        {this.state.comments.map((comments) => {
+                        return (
+                                <Posts 
+                                    key={comments.commentId}
+                                    id={comments.id}
+                                    profilePic={comments.profile}
+                                    username={comments.username}
+                                    comment={comments.comment}
+                                    timestamp={comments.timestamp}
+                                />
+                            )
+                        })}
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
