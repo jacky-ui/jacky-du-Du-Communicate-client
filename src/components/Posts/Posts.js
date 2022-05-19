@@ -3,17 +3,23 @@ import likesIcon from "../../assets/images/icons/likes.svg";
 import commentIcon from "../../assets/images/icons/comment.png";
 
 function Posts(props) {
+    const { id, profilePic, username, timestamp, comment } = props;
     return (
         <section className="posts">
             <div className="posts__profile">
-                <div className="posts__profile--sizing"></div>
+                {/*<div className="posts__profile--sizing"></div>*/}
+                <img 
+                    className="posts__profile--sizing"
+                    src={profilePic}
+                    alt="user profile"
+                />
             </div>
             <div className="posts__comments">
                 <div className="posts__comments--info">
-                    <span className="posts__comments--head">Username</span>
-                    <span className="posts__comments--head">02/03/2021</span>
+                    <span className="posts__comments--head">{username}</span>
+                    <span className="posts__comments--head">{timestamp}</span>
                 </div>
-                <p className="posts__comments--comment">hfdkajhldfhasdhf fdsafhsdjkfhlaksjhfd </p>
+                <p className="posts__comments--comment">{comment}</p>
                 <div className="posts__icons">
                     <img 
                         src={likesIcon}
