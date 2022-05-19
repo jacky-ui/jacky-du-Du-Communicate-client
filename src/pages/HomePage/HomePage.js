@@ -75,7 +75,15 @@ class HomePage extends Component {
                     </Link>
                 </div>
             )
-        }
+        };
+        if (!this.state.comments) {
+            return (
+            <section>
+                  <p>Loading...</p>
+            </section>
+            )
+          }
+        console.log(this.state.comments);
         return (
             <>
                 <header>
@@ -92,7 +100,18 @@ class HomePage extends Component {
                             />
                             <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
                         </div>
-                        <Posts comments={this.state.commentsJSON}/>
+                        {this.state.comments.map((comments) => {
+                        return (
+                                <Posts 
+                                    key={comments.commentId}
+                                    id={comments.id}
+                                    profilePic={comments.profile}
+                                    username={comments.username}
+                                    comment={comments.comment}
+                                    timestamp={comments.timestamp}
+                                />
+                            )
+                        })}
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
                 </main>

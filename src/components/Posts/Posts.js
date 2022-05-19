@@ -2,7 +2,7 @@ import "./Posts.scss";
 import likesIcon from "../../assets/images/icons/likes.svg";
 import commentIcon from "../../assets/images/icons/comment.png";
 
-function Posts() {
+function Posts(props) {
     return (
         <section className="posts">
             <div className="posts__profile">
