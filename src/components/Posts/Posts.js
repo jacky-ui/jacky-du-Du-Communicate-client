@@ -4,6 +4,8 @@ import commentIcon from "../../assets/images/icons/comment.png";
 
 function Posts(props) {
     const { id, profilePic, username, timestamp, comment } = props;
+    const formatTime = new Date(timestamp).toLocaleDateString();
+
     return (
         <section className="posts">
             <div className="posts__profile">
@@ -17,7 +19,7 @@ function Posts(props) {
             <div className="posts__comments">
                 <div className="posts__comments--info">
                     <span className="posts__comments--head">{username}</span>
-                    <span className="posts__comments--head">{timestamp}</span>
+                    <span className="posts__comments--head">{formatTime}</span>
                 </div>
                 <p className="posts__comments--comment">{comment}</p>
                 <div className="posts__icons">
