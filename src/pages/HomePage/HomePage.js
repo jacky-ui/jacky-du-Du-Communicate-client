@@ -83,7 +83,7 @@ class HomePage extends Component {
             </section>
             )
           }
-        console.log(this.state.comments);
+
         return (
             <>
                 <header>
