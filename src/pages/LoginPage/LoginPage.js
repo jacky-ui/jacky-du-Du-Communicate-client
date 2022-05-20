@@ -21,7 +21,6 @@ class LoginPage extends Component {
                 password
             })
             .then((response) => {
-                console.log(response)
                 sessionStorage.setItem("token", response.data.token);
                 this.setState({
                 pass: true,

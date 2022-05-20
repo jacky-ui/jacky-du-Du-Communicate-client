@@ -49,7 +49,6 @@ class HomePage extends Component {
                 }
             })
             .then((response) => {
-                // console.log(response.data);
                 const commentsJSON = response.data;
                 this.setState({
                     comments: commentsJSON
@@ -86,9 +85,8 @@ class HomePage extends Component {
 
         return (
             <>
-                <header>
-                    <Navigation profile={this.state.profilePic}/>
-                </header>
+                <Navigation profile={this.state.profilePic}/>
+
                 <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
                 <main className="container">
                     <section className="container__comments">
