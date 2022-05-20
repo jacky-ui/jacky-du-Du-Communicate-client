@@ -19,7 +19,7 @@ function Navigation () {
                         <h3 className="nav__items--home">HOME</h3>
                     </Link>
                     <Link to="/chatroom" className="nav__link--underline">
-                        <h3 className="nav__items--chat">CHATROOM</h3>
+                        <h3 className="nav__items--chat">DU-CHAT</h3>
                     </Link>
                     <img 
                         src={profilePicture}
