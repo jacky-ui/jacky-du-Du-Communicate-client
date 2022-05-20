@@ -1,3 +1,30 @@
 @use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.chatroom {
+    display: flex;
+    width: 80%;
+
+
+    &__contain {
+        display: flex;
+    }
+
+    &__header {
+        @include subheader;
+        text-align: center;
+    }
+
+    &__members {
+        width: 30%;
+        height: 100vh;
+        border-right: 1px solid $Black;
+        border-bottom: 1px solid $Black;
+        border-radius: 4px;
+    }
+
+    &__room {
+        width: 70%;
+    }
+}

@@ -1,12 +1,12 @@
 import axios from "axios";
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
 import jwt_decode from "jwt-decode";
 import "./HomePage.scss";
 import Posts from "../../components/Posts/Posts";
 import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import PostComment from "../../components/PostComment/PostComment";
+import FailedLogin from "../../components/FailedLogin/FailedLogin";
 
 class HomePage extends Component {
     state = {
@@ -67,12 +67,7 @@ class HomePage extends Component {
     render() {
         if (this.state.failedLogin) {
             return(
-                <div className="failed">
-                    <h2 className="failed__message">You must be logged in to view this page.</h2>
-                    <Link to="/login">
-                        <button className="failed__button">Login or Signup!</button>
-                    </Link>
-                </div>
+                <FailedLogin />
             )
         };
         if (!this.state.comments) {
@@ -86,33 +81,36 @@ class HomePage extends Component {
         return (
             <>
                 <Navigation profile={this.state.profilePic}/>
-
-                <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
-                <main className="container">
-                    <section className="container__comments">
-                        <div className="comments">
-                            <img 
-                                src={this.state.profilePic}
-                                className="comments__profile"
-                                alt="user profile"
-                            />
-                            <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
-                        </div>
-                        {this.state.comments.map((comments) => {
-                        return (
-                                <Posts 
-                                    key={comments.commentId}
-                                    id={comments.id}
-                                    profilePic={comments.profile}
-                                    username={comments.username}
-                                    comment={comments.comment}
-                                    timestamp={comments.timestamp}
-                                />
-                            )
-                        })}
-                    </section>
+                <div className="contain">
+                    <div className="contain__main">
+                        <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
+                        <main>
+                            <section className="contain__comments">
+                                <div className="comments">
+                                    <img 
+                                        src={this.state.profilePic}
+                                        className="comments__profile"
+                                        alt="user profile"
+                                    />
+                                    <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
+                                </div>
+                                {this.state.comments.map((comments) => {
+                                return (
+                                        <Posts 
+                                            key={comments.commentId}
+                                            id={comments.id}
+                                            profilePic={comments.profile}
+                                            username={comments.username}
+                                            comment={comments.comment}
+                                            timestamp={comments.timestamp}
+                                        />
+                                    )
+                                })}
+                            </section>
+                        </main>
+                    </div>
                     <SideNavigation handleLogout={this.handleLogout}/>
-                </main>
+                </div>
             </>
         )
     }
