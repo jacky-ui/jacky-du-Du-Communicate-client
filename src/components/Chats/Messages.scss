@@ -1,0 +1,14 @@
+@use "../../styles/global.scss" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.message {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+
+    &__header {
+        @include subheader;
+        text-align: center;
+    }
+}

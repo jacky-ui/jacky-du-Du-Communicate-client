@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Messages from "../../components/Chats/Messages";
 import FailedLogin from "../../components/FailedLogin/FailedLogin";
 import Members from "../../components/Members/Members";
 import Navigation from "../../components/Navigation/Navigation";
@@ -13,7 +14,6 @@ class ChatRoomPage extends Component {
 
     componentDidMount() {
         const token = sessionStorage.getItem("token");
-        console.log(token);
 
         if (!token) {
             this.setState({ failedLogin: true });
@@ -45,7 +45,7 @@ class ChatRoomPage extends Component {
                             <Members />
                         </div>
                         <div className="chatroom__room">
-                            <h3 className="chatroom__header">DU-CHAT</h3>
+                            <Messages />
                         </div>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
