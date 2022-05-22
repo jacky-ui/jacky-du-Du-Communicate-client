@@ -13,23 +13,39 @@
     margin-right: auto;
     width: 30rem;
 
-    &__form--btn {
-        @include label-buttons;
-        background-color: $Orange;
-        color: $White;
-        width: 100%;
-        height: 2.5rem;
-        border-radius: 0.5rem;
-        border-style: none;
-
-        &:hover {
-            background-color: $Black;
+    &__form {
+        &--btn {
+            @include label-buttons;
+            background-color: $Orange;
             color: $White;
-            cursor: pointer;
+            width: 100%;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            border-style: none;
+
+            &:hover {
+                background-color: $Black;
+                color: $White;
+                cursor: pointer;
+            }
+        }
+
+        &--upload::before {
+            background-color: $Blue;
+            border-radius: 10px;
         }
     }
+
     &__state {
         @include body-medium;
         width: 80%;
     } 
+}
+
+.signup__form--upload::-webkit-file-upload-button {
+
+}
+
+.signup__form--upload::before {
+
 }

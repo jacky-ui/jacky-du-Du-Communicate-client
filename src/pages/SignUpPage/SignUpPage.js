@@ -52,6 +52,12 @@ class SignUpPage extends Component {
                         <Inputs type="text" name="last_name" label="Last Name"/>
                         <Inputs type="text" name="username" label="Username"/>
                         <Inputs type="password" name="password" label="Password"/>
+                        <input 
+                            type="file"
+                            name="profileImage"
+                            accept="image/*"
+                            className="signup__form--upload"
+                        />
                         <button className="signup__form--btn">Sign Up!</button>
                         {this.state.pass && <Link to="/login"><h2 className="signup__state">Awesome! Click the link to return to login!</h2></Link>}
                         {this.state.empty && <h2 className="signup__state">{this.state.empty}</h2>}
