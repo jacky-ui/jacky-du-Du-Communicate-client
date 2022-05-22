@@ -3,6 +3,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import HomePage from './pages/HomePage/HomePage';
 import './styles/App.scss';
+import ChatRoomPage from './pages/ChatRoomPage/ChatRoomPage';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUpPage />
+          </Route>
+          <Route to="/chatroom">
+            <ChatRoomPage />
           </Route>
         </Switch>
       </BrowserRouter>
