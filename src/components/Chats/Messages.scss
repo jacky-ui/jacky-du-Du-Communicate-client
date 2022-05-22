@@ -11,4 +11,9 @@
         @include subheader;
         text-align: center;
     }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
 }

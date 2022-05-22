@@ -1,4 +1,5 @@
 import { Component } from "react";
+import jwt_decode from "jwt-decode";
 import Messages from "../../components/Chats/Messages";
 import FailedLogin from "../../components/FailedLogin/FailedLogin";
 import Members from "../../components/Members/Members";
@@ -10,6 +11,8 @@ class ChatRoomPage extends Component {
     state = {
         failedLogin: false,
         user: null,
+        username: null,
+        userId: null
     }
 
     componentDidMount() {
@@ -19,6 +22,15 @@ class ChatRoomPage extends Component {
             this.setState({ failedLogin: true });
             return;
         }
+
+        const decodedUser = jwt_decode(token);
+        const username = decodedUser.user;
+        const usersId = decodedUser.userId;
+        this.setState (
+            { 
+                username: username,
+                userId: usersId 
+            });
     }
 
     handleLogout = () => {
@@ -35,6 +47,7 @@ class ChatRoomPage extends Component {
                 <FailedLogin />
             )
         };
+
         return (
             <>
                 <Navigation />
@@ -45,7 +58,7 @@ class ChatRoomPage extends Component {
                             <Members />
                         </div>
                         <div className="chatroom__room">
-                            <Messages />
+                            <Messages username={this.state.username} userId={this.state.userId}/>
                         </div>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
