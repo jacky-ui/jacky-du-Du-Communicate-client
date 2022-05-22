@@ -15,17 +15,20 @@ class SignUpPage extends Component {
     handleSignUp = (e) => {
         e.preventDefault();
 
-        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value) {
+        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !e.target.profileImage.value) {
             this.setState({ empty: "All fields are required" });
             return;
         }
+
+        console.log(e.target.profileImage.value);
 
         axios
             .post("http://localhost:8080/users/signup", {
                 firstName: e.target.first_name.value,
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
-                password: e.target.password.value
+                password: e.target.password.value,
+                profilePicture: e.target.profileImage.value
             })
             .then(() => {
                 this.setState({ pass: true, error: " "});
