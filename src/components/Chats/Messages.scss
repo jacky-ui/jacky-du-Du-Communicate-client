@@ -23,6 +23,8 @@
 
         &--posted {
             text-align: end;
+            flex-direction: column;
+            margin-bottom: 2rem;
         }
 
         &--comment {
@@ -37,8 +39,8 @@
 
         &--commented {
             @include body-medium;
-            background-color: $Grey;
-            color: $Black;
+            background-color: $Blue;
+            color: $White;
             border: 1px solid $Black;
             border-radius: 4px;
             width: 12rem;
@@ -49,6 +51,12 @@
             @include smallheader;
             font-size: 0.8rem;
             margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        &--overflow {
+            height: 100%;
+            overflow-y: scroll;
         }
     }
 
