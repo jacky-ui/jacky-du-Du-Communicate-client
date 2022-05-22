@@ -57,7 +57,9 @@ class SignUpPage extends Component {
                             name="profileImage"
                             accept="image/*"
                             className="signup__form--upload"
+                            id="profileImage"
                         />
+                        <label htmlFor="profileImage" className="signup__form--lbl">Choose a file...</label>
                         <button className="signup__form--btn">Sign Up!</button>
                         {this.state.pass && <Link to="/login"><h2 className="signup__state">Awesome! Click the link to return to login!</h2></Link>}
                         {this.state.empty && <h2 className="signup__state">{this.state.empty}</h2>}

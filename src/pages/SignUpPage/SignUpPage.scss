@@ -30,9 +30,30 @@
             }
         }
 
-        &--upload::before {
+        &--upload {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        &--lbl {
+            @include label-buttons;
             background-color: $Blue;
-            border-radius: 10px;
+            color: $White;
+            border-radius: 0.5rem;
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 0.6rem 0rem;
+            margin-bottom: 1rem;
+
+            &:hover {
+                background-color: $Black;
+                cursor: pointer;
+            }
         }
     }
 
@@ -40,12 +61,4 @@
         @include body-medium;
         width: 80%;
     } 
-}
-
-.signup__form--upload::-webkit-file-upload-button {
-
-}
-
-.signup__form--upload::before {
-
 }
