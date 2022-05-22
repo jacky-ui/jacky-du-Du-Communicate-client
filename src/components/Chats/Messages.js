@@ -1,12 +1,14 @@
 import { Component } from "react";
 import io from "socket.io-client";
+import sendIcon from "../../assets/images/icons/send.png";
 import "./Messages.scss";
 let socket = io.connect("http://localhost:8080");
 
 class Messages extends Component {
     state = {
         chat: [ ],
-        userMesaage: null
+        userMesaage: null,
+        userCommented: [ ]
     }
 
     componentDidMount = () => {
@@ -17,7 +19,6 @@ class Messages extends Component {
                 comment: data.comment,
                 username: data.username
             };
-            console.log(receivedComment);
             this.setState ({ chat: [...this.state.chat, receivedComment] })
             // this.updateComments(receivedComment);
             return receivedComment;
@@ -34,9 +35,7 @@ class Messages extends Component {
             username: this.props.username
         });
 
-        this.setState ({
-            userMesaage: post
-        })
+        this.setState ({ userMesaage: post })
 
         e.target.reset();
     }
@@ -45,22 +44,25 @@ class Messages extends Component {
         return (
             <>
             <section className="message">
-                <h3 className="message__header">DU-CHAT</h3>
                 <div className="message__container">
-                    <div className="message__container--posted">
-                        {this.state.chat.map((data) => {
-                            return(
-                                <div key={data.id}>
-                                    <span>{data.comment}</span>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    <h3 className="message__container--header">DU-CHAT</h3>
+                            {this.state.chat.map((data) => {
+                                return(
+                                    <div className="message__container--receive" key={data.id}>
+                                        <span className="message__container--username">{data.username}</span>
+                                        <div>
+                                            <span className="message__container--comment">{data.comment}</span>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                </div>
                     <form className="message__form" onSubmit={this.handleSend}>
                         <input className="message__form--input" type="text" placeholder="Write a Message..." name="post"/>
-                        <button className="message__form--btn">SEND</button>
+                        <button className="message__form--btn">
+                        <img className="icons--sizing icons--hover" src={sendIcon}/>SEND
+                        </button>
                     </form>
-                </div>
             </section>
             </>
         )

@@ -3,17 +3,88 @@
 @use "../../styles/partials/variables" as *;
 
 .message {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-
-    &__header {
-        @include subheader;
-        text-align: center;
-    }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &__container {
+
+        &--header {
+            @include subheader;
+            text-align: center;
+        }
+
+        &--receive {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        &--posted {
+            text-align: end;
+        }
+
+        &--comment {
+            @include body-medium;
+            background-color: $Orange;
+            color: $Black;
+            border: 1px solid $Black;
+            border-radius: 4px;
+            width: 12rem;
+            padding: 0.5rem;
+        }
+
+        &--commented {
+            @include body-medium;
+            background-color: $Grey;
+            color: $Black;
+            border: 1px solid $Black;
+            border-radius: 4px;
+            width: 12rem;
+            padding: 0.5rem;
+        }
+
+        &--username {
+            @include smallheader;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__form {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+
+        &--input {
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            @include body-medium;
+            width: 17rem;
+        }
+
+        &--btn {
+            @include label-buttons;
+            background-color: $Orange;
+            color: $White;
+            border-radius: 4px;
+            border-style: none;
+            width: 6rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            &:hover {
+                background-color: $Black;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.icons--hover {
+    &:hover {
+        filter: invert(1);
     }
 }
