@@ -1,7 +1,6 @@
 import { Component } from "react";
 import io from "socket.io-client";
 import sendIcon from "../../assets/images/icons/send.png";
-import uniqid from "uniqid";
 import "./Messages.scss";
 let socket = io.connect("http://localhost:8080");
 
@@ -12,7 +11,6 @@ class Messages extends Component {
     }
 
     componentDidMount = () => {
-        // socket = io("http://localhost:8080/")
         socket.on("receive_message", (data) => {
             const receivedComment = {
                 id: data.id,
@@ -20,8 +18,6 @@ class Messages extends Component {
                 username: data.username
             };
             this.setState ({ chat: [...this.state.chat, receivedComment] })
-            // this.updateComments(receivedComment);
-            return receivedComment;
         })
     }
 
@@ -35,13 +31,6 @@ class Messages extends Component {
             username: this.props.username
         });
 
-        // const userPosted = {
-        //     id: uniqid(),
-        //     username: this.props.username,
-        //     comments: post
-        // };
-
-        // this.setState ({ chat: [...this.state.chat, userPosted] });
         e.target.reset();
     }
 

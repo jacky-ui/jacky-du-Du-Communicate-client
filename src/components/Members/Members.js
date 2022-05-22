@@ -1,22 +1,22 @@
 import "./Members.scss";
+import uniqid from "uniqid";
 
-function Members() {
+function Members(props) {
+    console.log(props.activeMembers)
     return (
         <>
-            <section className="member">
-                <div className="member__profile"></div>
-                <span className="member__username">Hello_World</span>
-            </section>
-
-            <section className="member">
-                <div className="member__profile"></div>
-                <span className="member__username">Hello_World</span>
-            </section>
-
-            <section className="member">
-                <div className="member__profile"></div>
-                <span className="member__username">Hello_World</span>
-            </section>
+            {props.activeMembers.map((member) => {
+                return(
+                    <section key={uniqid()} className="member">
+                        <img 
+                            src={member.profilePic}
+                            className="member__profile"
+                            alt="user profile"
+                        />
+                        <span className="member__username">{member.username}</span>
+                    </section>
+                )
+            })}
         </>
     )
 }
