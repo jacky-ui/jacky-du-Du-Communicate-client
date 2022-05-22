@@ -8,7 +8,8 @@ class SignUpPage extends Component {
     state = {
         error: " ",
         pass: false,
-        empty: " "
+        empty: " ",
+        uploadText: "Upload Profile Picture..."
     };
 
     handleSignUp = (e) => {
@@ -40,6 +41,16 @@ class SignUpPage extends Component {
             }
     };
 
+    handleUpload = (e) => {
+        console.log(e.target.value);
+        const uploadStatus = e.target.value;
+
+        if (!uploadStatus) {
+            return;
+        }
+        return this.setState ({ uploadText: "Selected!" })
+    }
+
     render() {
         return (
             <section className="container">
@@ -58,8 +69,9 @@ class SignUpPage extends Component {
                             accept="image/*"
                             className="signup__form--upload"
                             id="profileImage"
+                            onChange={this.handleUpload}
                         />
-                        <label htmlFor="profileImage" className="signup__form--lbl">Choose a file...</label>
+                        <label htmlFor="profileImage" className="signup__form--lbl">{this.state.uploadText}</label>
                         <button className="signup__form--btn">Sign Up!</button>
                         {this.state.pass && <Link to="/login"><h2 className="signup__state">Awesome! Click the link to return to login!</h2></Link>}
                         {this.state.empty && <h2 className="signup__state">{this.state.empty}</h2>}
