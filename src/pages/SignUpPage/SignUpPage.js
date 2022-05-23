@@ -9,15 +9,24 @@ class SignUpPage extends Component {
         error: " ",
         pass: false,
         empty: " ",
-        uploadText: "Upload Profile Picture..."
+        uploadText: "Upload Profile Picture...",
+        imageFile: null
     };
 
     handleSignUp = (e) => {
         e.preventDefault();
 
-        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !e.target.profileImage.value) {
+        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !this.state.imageFile) {
             this.setState({ empty: "All fields are required" });
             return;
+        }
+
+        const formImage = new FormData();
+        formImage.append("profileImage", this.state.imageFile);
+        const config = {
+            headers: {
+                "content-type": "multipart/form-data"
+            }
         }
 
         console.log(e.target.profileImage.value);
@@ -28,7 +37,7 @@ class SignUpPage extends Component {
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
                 password: e.target.password.value,
-                profilePicture: e.target.profileImage.value
+                formImage, config
             })
             .then(() => {
                 this.setState({ pass: true, error: " "});
@@ -45,12 +54,13 @@ class SignUpPage extends Component {
     };
 
     handleUpload = (e) => {
-        console.log(e.target.value);
-        const uploadStatus = e.target.value;
+        console.log(e.target.files[0]);
+        const uploadStatus = e.target.files[0];
 
         if (!uploadStatus) {
             return;
         }
+        this.setState ({ imageFile: uploadStatus });
         return this.setState ({ uploadText: "Selected!" })
     }
 
@@ -61,7 +71,7 @@ class SignUpPage extends Component {
 
                 <main className="signup">
                     <h2 className="login__signup--title">Sign Up</h2>
-                    <form className="signup__form" onSubmit={this.handleSignUp}>
+                    <form className="signup__form" onSubmit={this.handleSignUp} encType="multipart/form-data">
                         <Inputs type="text" name="first_name" label="First Name"/>
                         <Inputs type="text" name="last_name" label="Last Name"/>
                         <Inputs type="text" name="username" label="Username"/>
