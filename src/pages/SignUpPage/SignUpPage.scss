@@ -13,21 +13,50 @@
     margin-right: auto;
     width: 30rem;
 
-    &__form--btn {
-        @include label-buttons;
-        background-color: $Orange;
-        color: $White;
-        width: 100%;
-        height: 2.5rem;
-        border-radius: 0.5rem;
-        border-style: none;
-
-        &:hover {
-            background-color: $Black;
+    &__form {
+        &--btn {
+            @include label-buttons;
+            background-color: $Orange;
             color: $White;
-            cursor: pointer;
+            width: 100%;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            border-style: none;
+
+            &:hover {
+                background-color: $Black;
+                color: $White;
+                cursor: pointer;
+            }
+        }
+
+        &--upload {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        &--lbl {
+            @include label-buttons;
+            background-color: $Blue;
+            color: $White;
+            border-radius: 0.5rem;
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 0.6rem 0rem;
+            margin-bottom: 1rem;
+
+            &:hover {
+                background-color: $Black;
+                cursor: pointer;
+            }
         }
     }
+
     &__state {
         @include body-medium;
         width: 80%;
