@@ -23,13 +23,8 @@ class SignUpPage extends Component {
 
         const formImage = new FormData();
         formImage.append("profileImage", this.state.imageFile);
-        const config = {
-            headers: {
-                "content-type": "multipart/form-data"
-            }
-        }
 
-        console.log(e.target.profileImage.value);
+        // axios.post("https://httpbin.org/anything", formImage).then(res => console.log(res));
 
         axios
             .post("http://localhost:8080/users/signup", {
@@ -37,7 +32,7 @@ class SignUpPage extends Component {
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
                 password: e.target.password.value,
-                formImage, config
+                formImage
             })
             .then(() => {
                 this.setState({ pass: true, error: " "});
@@ -53,8 +48,7 @@ class SignUpPage extends Component {
             }
     };
 
-    handleUpload = (e) => {
-        console.log(e.target.files[0]);
+    onChangeUpload = (e) => {
         const uploadStatus = e.target.files[0];
 
         if (!uploadStatus) {
@@ -82,7 +76,7 @@ class SignUpPage extends Component {
                             accept="image/*"
                             className="signup__form--upload"
                             id="profileImage"
-                            onChange={this.handleUpload}
+                            onChange={this.onChangeUpload}
                         />
                         <label htmlFor="profileImage" className="signup__form--lbl">{this.state.uploadText}</label>
                         <button className="signup__form--btn">Sign Up!</button>

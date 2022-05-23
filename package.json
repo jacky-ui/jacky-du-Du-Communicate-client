@@ -17,6 +17,7 @@
     "sass": "^1.51.0",
     "socket.io-client": "^4.5.1",
     "uniqid": "^5.4.0",
+    "vanta": "^0.5.22",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
