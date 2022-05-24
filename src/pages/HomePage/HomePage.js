@@ -7,6 +7,7 @@ import Posts from "../../components/Posts/Posts";
 import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import PostComment from "../../components/PostComment/PostComment";
 import FailedLogin from "../../components/FailedLogin/FailedLogin";
+import { Link } from 'react-router-dom';
 
 class HomePage extends Component {
     state = {
@@ -88,11 +89,13 @@ class HomePage extends Component {
                         <main>
                             <section className="contain__comments">
                                 <div className="comments">
-                                    <img 
-                                        src={this.state.profilePic}
-                                        className="comments__profile"
-                                        alt="user profile"
-                                    />
+                                    <Link to="/user-profile">
+                                        <img 
+                                            src={this.state.profilePic}
+                                            className="comments__profile"
+                                            alt="user profile"
+                                        />
+                                    </Link>
                                     <PostComment profilePic={this.state.profilePic} username={this.state.welcomeUser} userId={this.state.userId}/>
                                 </div>
                                 {this.state.comments.map((comments) => {

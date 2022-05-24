@@ -14,8 +14,8 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignUpPage} />
-          <Route to="/chatroom" component={ChatRoomPage} />
-          <Route to="/user-profile" component={UserPage} />
+          <Route path="/chatroom" component={ChatRoomPage} />
+          <Route path="/user-profile" component={UserPage} />
         </Switch>
       </BrowserRouter>
     </div>

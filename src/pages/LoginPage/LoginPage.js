@@ -38,13 +38,6 @@ class LoginPage extends Component {
     }
 
     render() {
-        if (!this.state.body) {
-            return(
-                <section>
-                    <p>Loading</p>
-                </section>
-            )
-        }
         return (
             <article className="container">
                 <h1 className="container__header">Du-Communicate</h1>
