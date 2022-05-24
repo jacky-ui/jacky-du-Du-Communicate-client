@@ -1,10 +1,16 @@
 import axios from "axios";
-import { Component } from "react";
+import React from "react";
 import Inputs from "../../components/Inputs/Inputs";
 import "./SignUpPage.scss";
 import { Link } from "react-router-dom";
+import BIRDS from 'vanta/dist/vanta.birds.min';
 
-class SignUpPage extends Component {
+class SignUpPage extends React.Component {
+    constructor() {
+        super()
+        this.vantaRef = React.createRef()
+      }
+
     state = {
         error: " ",
         pass: false,
@@ -14,26 +20,40 @@ class SignUpPage extends Component {
 
     componentDidMount = () => {
         document.title = "Du-Communicate - Sign Up";
+
+        this.vantaEffect = BIRDS({
+            el: this.vantaRef.current,
+            backgroundColor: 0xffffff
+          })
     }
 
     handleSignUp = (e) => {
         e.preventDefault();
 
-        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !e.target.files[0]) {
+        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value) {
             this.setState({ empty: "All fields are required" });
             return;
         }
+
+        // console.log(e.target.profileImage.files[0]);
 
         axios
             .post("http://localhost:8080/users/signup", {
                 firstName: e.target.first_name.value,
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
-                password: e.target.password.value,
-                profile: e.target.files[0]
+                password: e.target.password.value
             })
             .then(() => {
                 this.setState({ pass: true, error: " "});
+                if (e.target.profileImage.files[0]) {
+                    const formImage = new FormData();
+                    formImage.append("image-field" ,e.target.profileImage.files[0]);
+                    axios.post("http://localhost:8080/users/uploadimage", formImage)
+                    .then((res) => {
+                        console.log(res);
+                    })
+                }
                 e.target.reset();
             })
 
@@ -48,6 +68,7 @@ class SignUpPage extends Component {
 
     onChangeUpload = (e) => {
         const uploadStatus = e.target.files[0];
+        console.log(e.target.files[0])
 
         if (!uploadStatus) {
             return;
@@ -57,12 +78,12 @@ class SignUpPage extends Component {
 
     render() {
         return (
-            <section className="container">
+            <section className="container" ref={this.vantaRef}>
                 <h1 className="container__header">Du-Communicate</h1>
 
                 <main className="signup">
                     <h2 className="login__signup--title">Sign Up</h2>
-                    <form className="signup__form" onSubmit={this.handleSignUp} encType="multipart/form-data">
+                    <form className="signup__form" onSubmit={this.handleSignUp}>
                         <Inputs type="text" name="first_name" label="First Name"/>
                         <Inputs type="text" name="last_name" label="Last Name"/>
                         <Inputs type="text" name="username" label="Username"/>
