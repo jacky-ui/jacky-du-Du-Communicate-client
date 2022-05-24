@@ -10,7 +10,6 @@ class SignUpPage extends Component {
         pass: false,
         empty: " ",
         uploadText: "Upload Profile Picture...",
-        imageFile: null
     };
 
     componentDidMount = () => {
@@ -20,15 +19,10 @@ class SignUpPage extends Component {
     handleSignUp = (e) => {
         e.preventDefault();
 
-        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !this.state.imageFile) {
+        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !e.target.files[0]) {
             this.setState({ empty: "All fields are required" });
             return;
         }
-
-        const formImage = new FormData();
-        formImage.append("profileImage", this.state.imageFile);
-
-        // axios.post("https://httpbin.org/anything", formImage).then(res => console.log(res));
 
         axios
             .post("http://localhost:8080/users/signup", {
@@ -36,7 +30,7 @@ class SignUpPage extends Component {
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
                 password: e.target.password.value,
-                formImage
+                profile: e.target.files[0]
             })
             .then(() => {
                 this.setState({ pass: true, error: " "});
@@ -58,7 +52,6 @@ class SignUpPage extends Component {
         if (!uploadStatus) {
             return;
         }
-        this.setState ({ imageFile: uploadStatus });
         return this.setState ({ uploadText: "Selected!" })
     }
 
