@@ -21,11 +21,13 @@ function Navigation () {
                     <Link to="/chatroom" className="nav__link--underline">
                         <h3 className="nav__items--chat">DU-CHAT</h3>
                     </Link>
-                    <img 
-                        src={profilePicture}
-                        className="nav__items--profileimg"
-                        alt="user profile"
-                    />
+                    <Link to="/user-profile">
+                        <img 
+                            src={profilePicture}
+                            className="nav__items--profileimg"
+                            alt="user profile"
+                        />
+                    </Link>
                     <img 
                         src={dropDown}
                         alt=" "

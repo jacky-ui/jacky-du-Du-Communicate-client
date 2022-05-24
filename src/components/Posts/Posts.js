@@ -1,6 +1,7 @@
 import "./Posts.scss";
 import likesIcon from "../../assets/images/icons/likes.svg";
 import commentIcon from "../../assets/images/icons/comment.png";
+import { Link } from "react-router-dom";
 
 function Posts(props) {
     const { id, profilePic, username, timestamp, comment } = props;
@@ -9,12 +10,13 @@ function Posts(props) {
     return (
         <section className="posts">
             <div className="posts__profile">
-                {/*<div className="posts__profile--sizing"></div>*/}
-                <img 
-                    className="posts__profile--sizing"
-                    src={profilePic}
-                    alt="user profile"
-                />
+                <Link to="/user-profile">
+                    <img 
+                        className="posts__profile--sizing"
+                        src={profilePic}
+                        alt="user profile"
+                    />
+                </Link>
             </div>
             <div className="posts__comments">
                 <div className="posts__comments--info">
