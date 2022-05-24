@@ -4,25 +4,18 @@ import SignUpPage from './pages/SignUpPage/SignUpPage';
 import HomePage from './pages/HomePage/HomePage';
 import './styles/App.scss';
 import ChatRoomPage from './pages/ChatRoomPage/ChatRoomPage';
-import Navigation from './components/Navigation/Navigation';
+import UserPage from './pages/UserPage/UserPage';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Route path="/signup">
-            <SignUpPage />
-          </Route>
-          <Route to="/chatroom">
-            <ChatRoomPage />
-          </Route>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/signup" component={SignUpPage} />
+          <Route to="/chatroom" component={ChatRoomPage} />
+          <Route to="/user-profile" component={UserPage} />
         </Switch>
       </BrowserRouter>
     </div>

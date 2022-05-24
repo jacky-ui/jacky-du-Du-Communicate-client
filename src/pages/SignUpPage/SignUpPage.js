@@ -13,6 +13,10 @@ class SignUpPage extends Component {
         imageFile: null
     };
 
+    componentDidMount = () => {
+        document.title = "Du-Communicate - Sign Up";
+    }
+
     handleSignUp = (e) => {
         e.preventDefault();
 

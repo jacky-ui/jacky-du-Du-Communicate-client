@@ -27,13 +27,8 @@
         margin-top: 0rem;
     }
     &__form--btn {
-        @include label-buttons;
-        background-color: $Orange;
-        color: $White;
+        @include button-style;
         width: 100%;
-        height: 2.5rem;
-        border-radius: 0.5rem;
-        border-style: none;
 
         &:hover {
             background-color: $Black;

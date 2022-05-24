@@ -19,6 +19,7 @@ class ChatRoomPage extends Component {
     }
 
     componentDidMount() {
+        document.title = "Du-Communicate - Du-Chat";
         const token = sessionStorage.getItem("token");
 
         if (!token) {

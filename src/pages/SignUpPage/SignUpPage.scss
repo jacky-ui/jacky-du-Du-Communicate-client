@@ -15,13 +15,8 @@
 
     &__form {
         &--btn {
-            @include label-buttons;
-            background-color: $Orange;
-            color: $White;
+            @include button-style;
             width: 100%;
-            height: 2.5rem;
-            border-radius: 0.5rem;
-            border-style: none;
 
             &:hover {
                 background-color: $Black;
@@ -40,10 +35,8 @@
         }
 
         &--lbl {
-            @include label-buttons;
+            @include button-style;
             background-color: $Blue;
-            color: $White;
-            border-radius: 0.5rem;
             display: block;
             text-align: center;
             width: 100%;
