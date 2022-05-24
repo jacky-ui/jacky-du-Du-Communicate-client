@@ -84,7 +84,7 @@ class HomePage extends Component {
                 <Navigation profile={this.state.profilePic}/>
                 <div className="contain">
                     <div className="contain__main">
-                        <h1 className="greetings">Welcome {this.state.welcomeUser}!</h1>
+                        <h1 id="contain__link" className="greetings">Welcome {this.state.welcomeUser}!</h1>
                         <main>
                             <section className="contain__comments">
                                 <div className="comments">
@@ -111,6 +111,7 @@ class HomePage extends Component {
                         </main>
                     </div>
                     <SideNavigation handleLogout={this.handleLogout}/>
+                    <a href="#contain__link" className="shortcut">Top</a>
                 </div>
             </>
         )

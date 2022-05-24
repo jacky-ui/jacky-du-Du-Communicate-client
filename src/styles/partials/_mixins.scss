@@ -49,3 +49,19 @@
     line-height: 1.125rem;
     font-family: 'Titillium';
 }
+
+// Buttons
+@mixin button-style {
+    @include label-buttons;
+    background-color: $Orange;
+    color: $White;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+
+// Icon Sizing
+@mixin icons {
+    width: 1.5rem;
+    height: 1.5rem;
+}
