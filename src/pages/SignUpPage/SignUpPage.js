@@ -35,8 +35,6 @@ class SignUpPage extends React.Component {
             return;
         }
 
-        // console.log(e.target.profileImage.files[0]);
-
         axios
             .post("http://localhost:8080/users/signup", {
                 firstName: e.target.first_name.value,
@@ -50,9 +48,6 @@ class SignUpPage extends React.Component {
                     const formImage = new FormData();
                     formImage.append("image-field" ,e.target.profileImage.files[0]);
                     axios.post("http://localhost:8080/users/uploadimage", formImage)
-                    .then((res) => {
-                        console.log(res);
-                    })
                 }
                 e.target.reset();
             })
@@ -68,7 +63,6 @@ class SignUpPage extends React.Component {
 
     onChangeUpload = (e) => {
         const uploadStatus = e.target.files[0];
-        console.log(e.target.files[0])
 
         if (!uploadStatus) {
             return;
