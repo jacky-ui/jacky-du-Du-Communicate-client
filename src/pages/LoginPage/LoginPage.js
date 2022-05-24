@@ -1,10 +1,16 @@
-import { Component } from "react";
+import  React  from "react";
 import Inputs from "../../components/Inputs/Inputs";
 import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.scss";
 import axios from "axios";
+import BIRDS from 'vanta/dist/vanta.birds.min';
 
-class LoginPage extends Component {
+class LoginPage extends React.Component {
+    constructor() {
+        super()
+        this.vantaRef = React.createRef()
+      }
+
     state = {
         errors: "",
         pass: false,
@@ -12,6 +18,11 @@ class LoginPage extends Component {
 
     componentDidMount = () => {
         document.title = "Du-Communicate - Login";
+
+        this.vantaEffect = BIRDS({
+            el: this.vantaRef.current,
+            backgroundColor: 0xffffff
+          })
     }
 
     handleSubmit = (e) => {
@@ -39,7 +50,7 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <article className="container">
+            <article className="container" ref={this.vantaRef}>
                 <h1 className="container__header">Du-Communicate</h1>
     
                 <main className="login">

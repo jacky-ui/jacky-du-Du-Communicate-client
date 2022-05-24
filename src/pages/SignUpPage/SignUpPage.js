@@ -1,45 +1,54 @@
 import axios from "axios";
-import { Component } from "react";
+import React from "react";
 import Inputs from "../../components/Inputs/Inputs";
 import "./SignUpPage.scss";
 import { Link } from "react-router-dom";
+import BIRDS from 'vanta/dist/vanta.birds.min';
 
-class SignUpPage extends Component {
+class SignUpPage extends React.Component {
+    constructor() {
+        super()
+        this.vantaRef = React.createRef()
+      }
+
     state = {
         error: " ",
         pass: false,
         empty: " ",
         uploadText: "Upload Profile Picture...",
-        imageFile: null
     };
 
     componentDidMount = () => {
         document.title = "Du-Communicate - Sign Up";
+
+        this.vantaEffect = BIRDS({
+            el: this.vantaRef.current,
+            backgroundColor: 0xffffff
+          })
     }
 
     handleSignUp = (e) => {
         e.preventDefault();
 
-        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value || !this.state.imageFile) {
+        if (!e.target.first_name || !e.target.last_name.value || !e.target.username.value || !e.target.password.value) {
             this.setState({ empty: "All fields are required" });
             return;
         }
-
-        const formImage = new FormData();
-        formImage.append("profileImage", this.state.imageFile);
-
-        // axios.post("https://httpbin.org/anything", formImage).then(res => console.log(res));
 
         axios
             .post("http://localhost:8080/users/signup", {
                 firstName: e.target.first_name.value,
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
-                password: e.target.password.value,
-                formImage
+                password: e.target.password.value
             })
             .then(() => {
                 this.setState({ pass: true, error: " "});
+                if (e.target.profileImage.files[0]) {
+                    const formImage = new FormData();
+                    formImage.append("image-field" ,e.target.profileImage.files[0]);
+                    axios.post("http://localhost:8080/users/uploadimage", formImage)
+                }
                 e.target.reset();
             })
 
@@ -58,18 +67,17 @@ class SignUpPage extends Component {
         if (!uploadStatus) {
             return;
         }
-        this.setState ({ imageFile: uploadStatus });
         return this.setState ({ uploadText: "Selected!" })
     }
 
     render() {
         return (
-            <section className="container">
+            <section className="container" ref={this.vantaRef}>
                 <h1 className="container__header">Du-Communicate</h1>
 
                 <main className="signup">
                     <h2 className="login__signup--title">Sign Up</h2>
-                    <form className="signup__form" onSubmit={this.handleSignUp} encType="multipart/form-data">
+                    <form className="signup__form" onSubmit={this.handleSignUp}>
                         <Inputs type="text" name="first_name" label="First Name"/>
                         <Inputs type="text" name="last_name" label="Last Name"/>
                         <Inputs type="text" name="username" label="Username"/>
