@@ -15,7 +15,7 @@ class HomePage extends Component {
         welcomeUser: null,
         profilePic: null,
         userId: null,
-        comments: null
+        comments: null,
     }
 
     componentDidMount() {
