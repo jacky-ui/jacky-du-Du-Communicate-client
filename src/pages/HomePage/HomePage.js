@@ -19,6 +19,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
+        document.title = "Du-Communicate - Home";
         const token = sessionStorage.getItem("token");
 
         if (!token) {

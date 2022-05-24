@@ -3,11 +3,17 @@ import Inputs from "../../components/Inputs/Inputs";
 import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.scss";
 import axios from "axios";
+import * as THREE from 'three'
+import BIRDS from "vanta/dist/vanta.birds.min";
 
 class LoginPage extends Component {
     state = {
         errors: "",
-        pass: false
+        pass: false,
+    }
+
+    componentDidMount = () => {
+        document.title = "Du-Communicate - Login";
     }
 
     handleSubmit = (e) => {
