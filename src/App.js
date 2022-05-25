@@ -15,7 +15,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignUpPage} />
           <Route path="/chatroom" component={ChatRoomPage} />
-          <Route path="/user-profile:id" component={UserPage} />
+          <Route path="/user-profile/:id" component={UserPage} />
         </Switch>
       </BrowserRouter>
     </div>

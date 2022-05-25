@@ -1,6 +1,6 @@
 import { Component } from "react";
 import jwt_decode from "jwt-decode";
-import Messages from "../../components/Chats/Messages";
+import Messages from "../../components/Messages/Messages";
 import FailedLogin from "../../components/FailedLogin/FailedLogin";
 import Members from "../../components/Members/Members";
 import Navigation from "../../components/Navigation/Navigation";

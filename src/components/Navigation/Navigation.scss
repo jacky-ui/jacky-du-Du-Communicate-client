@@ -36,9 +36,9 @@
 
         &--profileimg {
             display: block;
-            background-color: black;
             @include icons;
             border-radius: 50%;
+            object-fit: cover;
         }
 
         &--chat {

@@ -89,7 +89,7 @@ class HomePage extends Component {
                         <main>
                             <section className="contain__comments">
                                 <div className="comments">
-                                    <Link to="/user-profile">
+                                    <Link to={`/user-profile/${this.state.userId}`}>
                                         <img 
                                             src={this.state.profilePic}
                                             className="comments__profile"
