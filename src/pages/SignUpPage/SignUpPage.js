@@ -16,6 +16,7 @@ class SignUpPage extends React.Component {
         pass: false,
         empty: " ",
         uploadText: "Upload Profile Picture...",
+        userTaken: null
     };
 
     componentDidMount = () => {
@@ -43,7 +44,7 @@ class SignUpPage extends React.Component {
                 password: e.target.password.value
             })
             .then(() => {
-                this.setState({ pass: true, error: " "});
+                this.setState({ pass: true, error: " "})
                 if (e.target.profileImage.files[0]) {
                     const formImage = new FormData();
                     formImage.append("image-field" ,e.target.profileImage.files[0]);
@@ -51,7 +52,6 @@ class SignUpPage extends React.Component {
                 }
                 e.target.reset();
             })
-
             .catch((error) => {
                 this.setState({ pass: false, error: error.response.data })
             });
@@ -92,10 +92,11 @@ class SignUpPage extends React.Component {
                         />
                         <label htmlFor="profileImage" className="signup__form--lbl">{this.state.uploadText}</label>
                         <button className="signup__form--btn">Sign Up!</button>
+                    </form>
                         {this.state.pass && <Link to="/login"><h2 className="signup__state">Awesome! Click the link to return to login!</h2></Link>}
                         {this.state.empty && <h2 className="signup__state">{this.state.empty}</h2>}
                         {this.state.error && <h2 className="signup__state">{this.state.error}</h2>}
-                    </form>
+                        {this.state.userTaken && <h2 className="signup__state">{this.state.userTaken}</h2>}
                 </main>
             </section>
         )
