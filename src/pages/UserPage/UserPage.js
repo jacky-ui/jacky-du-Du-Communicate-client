@@ -13,7 +13,7 @@ class UserPage extends Component {
         user: null,
         userComment: [],
         username: null,
-        profile: null
+        profile: null,
     }
 
     componentDidMount = () => {
@@ -21,9 +21,8 @@ class UserPage extends Component {
         const decodedUser = jwt_decode(token);
 
         const userId = this.props.match.params.id;
-        const { user, profilePicture } = decodedUser;
+        const { user } = decodedUser;
         this.setState({ username: user });
-        this.setState({ profile: profilePicture })
        
         if (!token) {
             this.setState({ failedLogin: true });
@@ -39,6 +38,7 @@ class UserPage extends Component {
             .then((res) => {
                 const userComment = res.data;
                 this.setState({ userComment: userComment });
+                this.setState({ profile: userComment[0].profile })
             })
     }
 
