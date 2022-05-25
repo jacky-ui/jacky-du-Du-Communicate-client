@@ -10,7 +10,7 @@ function Posts(props) {
     return (
         <section className="posts">
             <div className="posts__profile">
-                <Link to={`/user-profile:${id}`}>
+                <Link to={`/user-profile/${id}`}>
                     <img 
                         className="posts__profile--sizing"
                         src={profilePic}
