@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Inputs from "../../components/Inputs/Inputs";
+import previousIcon from "../../assets/images/icons/previous.png";
 import "./SignUpPage.scss";
 import { Link } from "react-router-dom";
 import BIRDS from 'vanta/dist/vanta.birds.min';
@@ -76,6 +77,9 @@ class SignUpPage extends React.Component {
                 <h1 className="container__header">Du-Communicate</h1>
 
                 <main className="signup">
+                    <Link to="/login" className="link__underline">
+                        <span>Back to Login</span>
+                    </Link>
                     <h2 className="login__signup--title">Sign Up</h2>
                     <form className="signup__form" onSubmit={this.handleSignUp}>
                         <Inputs type="text" name="first_name" label="First Name"/>
