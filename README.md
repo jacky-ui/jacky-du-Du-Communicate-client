@@ -44,9 +44,9 @@ Finally, to run Du-Communicate you would have to open your IDE, open the project
 
 To run this project, you will need to add the following environment variables to your .env file
 
-API_KEY
+REACT_APP_URL: A URL path for requesting data from the server. If you are running on your local machine, this should be http://localhost:<insert port>
 
-ANOTHER_API_KEY
+REACT_APP_PORT: The port on your local machine on which you set your server to run on. 
 
 ### `Server Side`
 
