@@ -21,7 +21,8 @@ class LoginPage extends React.Component {
 
         this.vantaEffect = BIRDS({
             el: this.vantaRef.current,
-            backgroundColor: 0xffffff
+            backgroundColor: 0xffffff,
+            height: "100vh"
           })
     }
 

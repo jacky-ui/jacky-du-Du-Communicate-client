@@ -2,7 +2,6 @@ import "./Members.scss";
 import uniqid from "uniqid";
 
 function Members(props) {
-    console.log(props.activeMembers)
     return (
         <>
             {props.activeMembers.map((member) => {
