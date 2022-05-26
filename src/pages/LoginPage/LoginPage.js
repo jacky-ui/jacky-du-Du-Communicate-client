@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.scss";
 import axios from "axios";
 import BIRDS from 'vanta/dist/vanta.birds.min';
+const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 
 class LoginPage extends React.Component {
     constructor() {
@@ -32,7 +33,7 @@ class LoginPage extends React.Component {
         const password = e.target.password.value;
 
         axios
-            .post("http://localhost:8080/users/login", {
+            .post(`${REACT_APP_URL}${REACT_APP_PORT}/users/login`, {
                 username, 
                 password
             })

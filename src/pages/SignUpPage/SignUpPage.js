@@ -1,10 +1,10 @@
 import axios from "axios";
 import React from "react";
 import Inputs from "../../components/Inputs/Inputs";
-import previousIcon from "../../assets/images/icons/previous.png";
 import "./SignUpPage.scss";
 import { Link } from "react-router-dom";
 import BIRDS from 'vanta/dist/vanta.birds.min';
+const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 
 class SignUpPage extends React.Component {
     constructor() {
@@ -38,7 +38,7 @@ class SignUpPage extends React.Component {
         }
 
         axios
-            .post("http://localhost:8080/users/signup", {
+            .post(`${REACT_APP_URL}${REACT_APP_PORT}/users/signup`, {
                 firstName: e.target.first_name.value,
                 lastName: e.target.last_name.value,
                 username: e.target.username.value,
@@ -47,9 +47,10 @@ class SignUpPage extends React.Component {
             .then(() => {
                 this.setState({ pass: true, error: " "})
                 if (e.target.profileImage.files[0]) {
+                    console.log(e.target.profileImage.files[0])
                     const formImage = new FormData();
                     formImage.append("image-field" ,e.target.profileImage.files[0]);
-                    axios.post("http://localhost:8080/users/uploadimage", formImage)
+                    axios.post(`${REACT_APP_URL}${REACT_APP_PORT}/users/uploadimage`, formImage)
                 }
                 e.target.reset();
             })

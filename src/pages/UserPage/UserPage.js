@@ -6,6 +6,7 @@ import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import "./UserPage.scss";
+const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 
 class UserPage extends Component {
     state = {
@@ -30,7 +31,7 @@ class UserPage extends Component {
         }
 
         axios
-            .get(`http://localhost:8080/comments/${userId}`, {
+            .get(`${REACT_APP_URL}${REACT_APP_PORT}/comments/${userId}`, {
                 headers: {
                     Authorization: "Bearer" + token
                 }

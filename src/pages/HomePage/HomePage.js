@@ -8,6 +8,7 @@ import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import PostComment from "../../components/PostComment/PostComment";
 import FailedLogin from "../../components/FailedLogin/FailedLogin";
 import { Link } from 'react-router-dom';
+const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 
 class HomePage extends Component {
     state = {
@@ -32,7 +33,7 @@ class HomePage extends Component {
         const userId = decodedUser.id;
 
         axios
-            .get(`http://localhost:8080/dashboard/${userId}`, {
+            .get(`${REACT_APP_URL}${REACT_APP_PORT}/dashboard/${userId}`, {
                 headers: {
                     Authorization: "Bearer" + token
                 }
@@ -45,7 +46,7 @@ class HomePage extends Component {
             });
 
         axios
-            .get("http://localhost:8080/comments", {
+            .get(`${REACT_APP_URL}${REACT_APP_PORT}/comments`, {
                 headers: {
                     Authorization: "Bearer" + token
                 }

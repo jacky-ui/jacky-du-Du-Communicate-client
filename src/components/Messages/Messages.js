@@ -2,7 +2,8 @@ import { Component } from "react";
 import io from "socket.io-client";
 import sendIcon from "../../assets/images/icons/send.png";
 import "./Messages.scss";
-let socket = io.connect("http://localhost:8080");
+const { REACT_APP_URL, REACT_APP_PORT } = process.env;
+let socket = io.connect(`${REACT_APP_URL}${REACT_APP_PORT}`);
 
 class Messages extends Component {
     state = {
