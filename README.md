@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Du-Communicate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Du-Communicate is a social media platform where users are encouraged to communicate with other active users.
+
+![image](https://user-images.githubusercontent.com/64509710/170397700-f0fb00c0-93f6-4b97-946d-d7148ed92423.png)
+
 
 ## Available Scripts
 
