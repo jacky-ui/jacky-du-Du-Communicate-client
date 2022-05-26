@@ -19,6 +19,10 @@ class Messages extends Component {
             };
             this.setState ({ chat: [...this.state.chat, receivedComment] })
         })
+
+        socket.on("connection", () => {
+            console.log("user connected");
+        })
     }
 
     handleSend = (e) => {
