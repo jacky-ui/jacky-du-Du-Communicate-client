@@ -2,6 +2,7 @@ import Popup from 'reactjs-popup';
 import { Component } from "react";
 import axios from 'axios';
 import "./PostComment.scss";
+const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 
 class PostComment extends Component {
     state = {
@@ -17,7 +18,7 @@ class PostComment extends Component {
         }
 
         axios
-            .post("http://localhost:8080/comments/post", {
+            .post(`${REACT_APP_URL}${REACT_APP_PORT}/comments/post`, {
                 profilePicture: this.props.profilePic,
                 comments: e.target.comments.value,
                 userId: this.props.userId,
