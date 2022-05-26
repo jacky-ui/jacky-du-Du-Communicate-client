@@ -56,7 +56,7 @@ Du-Communicate was built with client and server being in separate repositories. 
     
 ## Lessons Learned & Next Steps
 
-Excuse my language and to quote one of my Educator's, "Shit takes time". This capstone has really taught my how to use my time wisely and to focus on the important and bigger functions at hand before diving into the finer details (styling). Through this project I have solidified what I have learned in BrainStation, as well as learning how to implement Socket.io! For my next steps, I would love to use SQL instead of JSON file for data retention.
+Excuse my language and to quote one of my Educators, "Shit takes time". This capstone has really taught my how to use my time wisely and to focus on the important and bigger functions at hand before diving into the finer details (styling). Through this project I have solidified what I have learned in BrainStation, as well as learning how to implement Socket.io! For my next steps, I would love to use SQL instead of JSON file for data retention.
     
 ## Acknowledgements 
 
