@@ -47,6 +47,7 @@ class SignUpPage extends React.Component {
             .then(() => {
                 this.setState({ pass: true, error: " "})
                 if (e.target.profileImage.files[0]) {
+                    console.log(e.target.profileImage.files[0])
                     const formImage = new FormData();
                     formImage.append("image-field" ,e.target.profileImage.files[0]);
                     axios.post(`${REACT_APP_URL}${REACT_APP_PORT}/users/uploadimage`, formImage)
