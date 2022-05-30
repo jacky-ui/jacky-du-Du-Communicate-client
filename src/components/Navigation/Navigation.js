@@ -60,7 +60,7 @@ class Navigation extends Component {
                             onClick={this.onClickMenu}
                         />
                         <div className={`${this.state.showMenu ? "nav__dropdown--hide" : "nav__dropdown--show" }`}>
-                            <DropDownNav />
+                            <DropDownNav handleLogout={this.props.handleLogout}/>
                         </div>
                     </div>
                 </nav>

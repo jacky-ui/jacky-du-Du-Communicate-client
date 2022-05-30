@@ -3,7 +3,6 @@ import "./DropDownItem.scss";
 
 function DropDownItem (props) {
     const { icon, item, path, alt } = props
-    console.log(item);
     return(
         <>
             <Link to={path} className="item__link">

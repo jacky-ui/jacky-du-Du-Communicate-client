@@ -16,7 +16,20 @@
 
         &--item {
             @include smallheader-mobile;
-            margin-top: 1rem;
+            padding: 0.5rem;
+
+            &:hover {
+                border: 1px solid $Orange;
+            }
         }
+    }
+    &__logout {
+        display: flex;
+        gap: 1rem;
+
+        &--icon {
+            width: 0.95rem;
+            height: 0.95rem;
+        } 
     }
 }

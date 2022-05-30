@@ -6,7 +6,7 @@ import homeIcon from "../../assets/images/icons/home.png";
 import chatIcon from "../../assets/images/icons/chat.png";
 import "./DropDownNav.scss";
 
-function DropDownNav () {
+function DropDownNav (props) {
     return (
         <>
             <div className="dropdown">
@@ -17,9 +17,22 @@ function DropDownNav () {
                     <li className="dropdown__lists--item">
                         <DropDownItem icon={chatIcon} path={"/chatroom"} item={"DU-CHAT"} alt={"Du-Chat"}/>
                     </li>
-                    <li className="dropdown__lists--item">Settings</li>
-                    <li className="dropdown__lists--item">Support</li>
-                    <li className="dropdown__lists--item">Logout</li>
+                    <li className="dropdown__lists--item">
+                        <DropDownItem icon={settingsIcon} path={"/"} item={"Setting"} alt={"Settings"}/>
+                    </li>
+                    <li className="dropdown__lists--item">
+                        <DropDownItem icon={supportIcon} path={"/"} item={"Support"} alt={"Support"}/>
+                    </li>
+                    <li className="dropdown__lists--item" onClick={props.handleLogout}>
+                        <div className="dropdown__logout">
+                            <img 
+                                src={logoutIcon}
+                                className="dropdown__logout--icon"
+                                alt="logout"
+                            />
+                            <span>Logout</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </>
