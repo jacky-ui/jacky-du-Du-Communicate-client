@@ -20,6 +20,7 @@ class Navigation extends Component {
     onClickMenu = () => {
         this.setState ({ showMenu: !this.state.showMenu });
     }
+
     render() {
         if(!this.state.profile || !this.state.id) {
             return (
@@ -54,8 +55,7 @@ class Navigation extends Component {
                             className="nav__items--dropdwn"
                             onClick={this.onClickMenu}
                         />
-                        <div className={`${this.state.showMenu ? "nav__dropdown--hide" : "nav__dropdown--show" }`}>
-                            <DropDownNav />
+                        <div className={`${this.state.showMenu ? "nav__dropdown--show" : "nav__dropdown--hide" }`}>
                             <DropDownNav handleLogout={this.props.handleLogout}/>
                         </div>
                     </div>
