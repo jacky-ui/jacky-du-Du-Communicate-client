@@ -3,12 +3,17 @@
 @use "../../styles/partials/variables" as *;
 
 .side {
-    width: 20%;
-    border-left: 1px solid $Black;
-    border-bottom: 1px solid $Black;
-    border-radius: 4px;
-    padding-left: 1rem;
-    height: 20rem;
+    display: none;
+
+    @include tablet {
+        display: unset;
+        width: 20%;
+        border-left: 1px solid $Black;
+        border-bottom: 1px solid $Black;
+        border-radius: 4px;
+        padding-left: 1rem;
+        height: 20rem;
+    }
 
     &__lists {
         list-style: none;
