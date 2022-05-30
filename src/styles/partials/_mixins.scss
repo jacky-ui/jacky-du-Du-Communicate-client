@@ -1,6 +1,67 @@
 @use "./typography" as *;
 @use "./variables" as *;
 
+// mixins mobile mode fonts
+
+@mixin page-header-mobile {
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 2.25rem;
+    font-family: 'Titillium';
+}
+
+@mixin subheader-mobile {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.75rem;
+    font-family: 'Titillium';
+}
+
+@mixin smallheader-mobile {
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+    font-family: 'Titillium';
+}
+
+@mixin label-buttons-mobile{
+  font-size: 0.813rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  font-family: 'Titillium';
+}
+
+@mixin table-header-mobile {
+    font-size: 0.688rem;
+    font-weight: normal;
+    line-height: 1rem;
+    font-family: 'Titillium';
+}
+
+@mixin body-large-mobile{
+    font-size: 0.938rem;
+    font-weight: normal;
+    line-height: 1.625rem;
+    font-family: 'Titillium';
+}
+
+@mixin body-medium-mobile{
+  font-size: 0.813rem;
+  font-weight: normal;
+  line-height: 1.25rem;
+  font-family: 'Titillium';
+}
+
+@mixin body-small-mobile{
+  font-size: 0.688rem;
+  font-weight: normal;
+  line-height: 1rem;
+  font-family: 'Titillium';
+}
+
+
+// mixins desktop & tablet mode
+
 @mixin page-header{
     font-size: 2rem;
     font-weight: bold;
