@@ -121,5 +121,5 @@ class HomePage extends Component {
         )
     }
 }
-
+{/* Comment out everything but will uncomment when working on responsiveness */}
 export default HomePage;
