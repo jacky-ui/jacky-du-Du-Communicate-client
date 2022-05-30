@@ -83,8 +83,8 @@ class HomePage extends Component {
 
         return (
             <>
-                <Navigation profile={this.state.profilePic}/>
-                <div className="contain">
+                <Navigation profile={this.state.profilePic} handleLogout={this.handleLogout}/>
+                {/*<div className="contain">
                     <div className="contain__main">
                         <h1 id="contain__link" className="greetings">Welcome {this.state.welcomeUser}!</h1>
                         <main>
@@ -116,7 +116,7 @@ class HomePage extends Component {
                     </div>
                     <SideNavigation handleLogout={this.handleLogout}/>
                     <a href="#contain__link" className="shortcut">Top</a>
-                </div>
+                            </div>*/}
             </>
         )
     }
