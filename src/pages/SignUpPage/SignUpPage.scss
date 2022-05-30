@@ -11,17 +11,32 @@
     border-radius: 0.5rem;
     margin-left: auto;
     margin-right: auto;
-    width: 30rem;
+    width: 100%;
+
+    @include tablet {
+        width: 30rem;
+    }
 
     &__form {
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+        }
+        
         &--btn {
-            @include button-style;
             width: 100%;
+            @include button-style;
+            @include label-buttons-mobile;
 
             &:hover {
                 background-color: $Black;
                 color: $White;
                 cursor: pointer;
+            }
+
+            @include tablet {
+                @include label-buttons;
             }
         }
 
@@ -51,15 +66,23 @@
     }
 
     &__state {
-        @include body-medium;
         width: 80%;
+        @include body-medium-mobile;
+
+        @include tablet {
+            @include body-medium;
+        }
     } 
 }
 
 .link__underline {
-    @include smallheader;
+    @include smallheader-mobile;
     text-decoration: none;
     position: absolute;
     right: 0.5rem;
     bottom: 0;
+
+    @include tablet {
+        @include smallheader;
+    }
 }

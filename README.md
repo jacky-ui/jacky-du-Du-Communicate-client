@@ -1,63 +1,70 @@
 # Du-Communicate
 
-Du-Communicate is a social media platform where users are encouraged to communicate with other active users. Users are able to post comments and chat with other users (More features to be added!).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![image](https://user-images.githubusercontent.com/64509710/170397700-f0fb00c0-93f6-4b97-946d-d7148ed92423.png)
+## Available Scripts
 
-## Features
+In the project directory, you can run:
 
-* Post comments
-* View other user profiles
-* Chatroom
-* More features to be added!!
+### `npm start`
 
-## Tech Stack
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Front End**
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-![image](https://user-images.githubusercontent.com/64509710/170399703-e38aea2a-04d3-4ddd-b150-dc3495feca9d.png)
+### `npm test`
 
-**Back End**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-![image](https://user-images.githubusercontent.com/64509710/170400406-22905f88-2aa6-4614-b3ca-1840e877c558.png)
+### `npm run build`
 
-**On Front & Back**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-![image](https://user-images.githubusercontent.com/64509710/170400589-edf617f2-3abf-4c64-8bcd-bffae42cc4c8.png)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `Run and Install Locally`
+### `npm run eject`
 
-Clone the project in desired folder from the terminal
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-    git clone https://github.com/jacky-ui/jacky-du-Du-Communicate-client.git
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Once cloned, you will need to insstall all the dependencies on the client and server side (link to server side below). This can be done by running the below commands in your terminal. Make sure you are in the project folder/directory
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-    npm i
-    
-Finally, to run Du-Communicate you would have to open your IDE, open the project folder if it isn't already open, then:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-    npm start
+## Learn More
 
-### `Environment Variables`
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To run this project, you will need to add the following environment variables to your .env file
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-REACT_APP_URL: A URL path for requesting data from the server. If you are running on your local machine, this should be http://localhost:<insert port>
+### Code Splitting
 
-REACT_APP_PORT: The port on your local machine on which you set your server to run on. 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### `Server Side`
+### Analyzing the Bundle Size
 
-Du-Communicate was built with client and server being in separate repositories. Below is a link you will need in order to run Du-Communicate as both client and server are connected.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-    https://github.com/jacky-ui/jacky-du-Du-Communicate-server
-    
-## Lessons Learned & Next Steps
+### Making a Progressive Web App
 
-Excuse my language and to quote one of my Educators, "Shit takes time". This capstone has really taught my how to use my time wisely and to focus on the important and bigger functions at hand before diving into the finer details (styling). Through this project I have solidified what I have learned in BrainStation, as well as learning how to implement Socket.io! For my next steps, I would love to use SQL instead of JSON file for data retention.
-    
-## Acknowledgements 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-I would like to dedicate this section to thank all my Educators, TA's, and classmates for this amazing journey. I couldn't have done this without everyone's support. Thank you from the bottom of my heart and I wish all the best to everyone!
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
