@@ -78,4 +78,14 @@
             }
         }
     }
+    &__dropdown--show {
+        display: unset;
+        position: absolute;
+        border: 1px solid $Black;
+        border-radius: 4px;
+    }
+
+    &__dropdown--hide {
+        display: none;
+    }
 }
