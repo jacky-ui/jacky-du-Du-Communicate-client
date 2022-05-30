@@ -9,7 +9,6 @@ import PostComment from "../../components/PostComment/PostComment";
 import FailedLogin from "../../components/FailedLogin/FailedLogin";
 import { Link } from 'react-router-dom';
 const { REACT_APP_URL, REACT_APP_PORT } = process.env;
-
 class HomePage extends Component {
     state = {
         user: null,
@@ -19,19 +18,15 @@ class HomePage extends Component {
         userId: null,
         comments: null,
     }
-
     componentDidMount() {
         document.title = "Du-Communicate - Home";
         const token = sessionStorage.getItem("token");
-
         if (!token) {
             this.setState({ failedLogin: true });
             return;
         }
-
         const decodedUser = jwt_decode(token);
         const userId = decodedUser.id;
-
         axios
             .get(`${REACT_APP_URL}${REACT_APP_PORT}/dashboard/${userId}`, {
                 headers: {
@@ -44,7 +39,6 @@ class HomePage extends Component {
                 this.setState({ profilePic: profile });
                 this.setState({userId: id});
             });
-
         axios
             .get(`${REACT_APP_URL}${REACT_APP_PORT}/comments`, {
                 headers: {
@@ -58,7 +52,6 @@ class HomePage extends Component {
                 })
             });
     }
-
     handleLogout = () => {
         sessionStorage.removeItem("token");
         this.setState({
@@ -66,7 +59,6 @@ class HomePage extends Component {
             failedLogin: true
         })
     }
-
     render() {
         if (this.state.failedLogin) {
             return(
@@ -83,8 +75,8 @@ class HomePage extends Component {
 
         return (
             <>
-                <Navigation profile={this.state.profilePic}/>
-                <div className="contain">
+                <Navigation profile={this.state.profilePic} handleLogout={this.handleLogout}/>
+                {/*<div className="contain">
                     <div className="contain__main">
                         <h1 id="contain__link" className="greetings">Welcome {this.state.welcomeUser}!</h1>
                         <main>
@@ -116,10 +108,9 @@ class HomePage extends Component {
                     </div>
                     <SideNavigation handleLogout={this.handleLogout}/>
                     <a href="#contain__link" className="shortcut">Top</a>
-                </div>
+                            </div>*/}
             </>
         )
     }
 }
-
 export default HomePage;
