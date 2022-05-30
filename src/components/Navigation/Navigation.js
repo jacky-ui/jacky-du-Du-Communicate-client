@@ -3,6 +3,7 @@ import dropDown from '../../assets/images/icons/dropdown-menu-icon-7.jpg';
 import jwt_decode from "jwt-decode";
 import './Navigation.scss';
 import { Component } from 'react';
+import DropDownNav from '../DropDownNav/DropDownNav';
 
 class Navigation extends Component {
     state = {
@@ -59,7 +60,7 @@ class Navigation extends Component {
                             onClick={this.onClickMenu}
                         />
                         <div className={`${this.state.showMenu ? "nav__dropdown--hide" : "nav__dropdown--show" }`}>
-                            <p>Hello world</p>
+                            <DropDownNav />
                         </div>
                     </div>
                 </nav>
