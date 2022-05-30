@@ -52,6 +52,10 @@
 
         &--dropdwn {
             @include icons;
+
+            @include tablet {
+                display: none;
+            }
         }
     }
 }
