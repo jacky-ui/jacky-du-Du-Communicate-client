@@ -6,23 +6,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 3rem;
     height: 3.5rem;
     border-bottom: 1px solid $Black;
 
-    @include tablet {
-        padding: 0.5rem 3rem;
-    }
-
     &__logo {
-        @include subheader-mobile;
+        @include page-header;
         margin: 0rem;
         color: black;
-        white-space: nowrap;
-
-        @include tablet {
-            @include page-header;
-        }
     }
 
     &__link--underline {
@@ -35,14 +26,9 @@
         gap: 1rem;
 
         &--home {
-            display: none;
+            @include subheader;
+            color: black;
 
-            @include tablet {
-                display: unset;
-                @include subheader;
-                color: black;
-            }
-            
             &:hover {
                 text-decoration: underline;
             }
@@ -56,36 +42,16 @@
         }
 
         &--chat {
-            display: none;
+            @include subheader;
+            color: black;
 
             &:hover {
                 text-decoration: underline;
             }
-
-            @include tablet {
-                display: unset;
-                @include subheader;
-                color: black;
-            }
-
         }
 
         &--dropdwn {
             @include icons;
-
-            @include tablet {
-                display: none;
-            }
         }
-    }
-    &__dropdown--show {
-        display: unset;
-        position: absolute;
-        right: 0;
-        top: 3.5rem;
-    }
-
-    &__dropdown--hide {
-        display: none;
     }
 }

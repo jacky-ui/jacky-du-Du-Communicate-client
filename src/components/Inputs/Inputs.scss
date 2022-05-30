@@ -8,24 +8,15 @@
 
     &__label {
         margin-bottom: 0.5rem;
-        @include smallheader-mobile;
-
-        @include tablet {
-            @include smallheader;
-        }
+        @include smallheader;
     }
 
     &__text {
-        @include body-medium-mobile;
         margin-bottom: 1rem;
         border: 1px solid #ccc;
         border-radius: 0.5rem;
         padding: 0.5rem;
-        width: 100%;
-
-        @include tablet {
-            @include body-medium;
-            width: 15rem;
-        }
+        @include body-medium;
+        width: 15rem;
     }
 }
