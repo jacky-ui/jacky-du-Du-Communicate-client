@@ -11,10 +11,10 @@
 
     &__header {
         @include page-header-mobile;
+        text-align: center;
 
         @include tablet {
             @include page-header;
-            text-align: center;
         }
     }
 }
