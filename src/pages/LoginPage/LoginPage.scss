@@ -1,10 +1,8 @@
 @use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-
 .container {
     padding: 1rem 2rem;
-
     @include tablet {
         padding: 2rem 5rem;
     }
@@ -15,10 +13,10 @@
 
         @include tablet {
             @include page-header;
+            text-align: center;
         }
     }
 }
-
 .login {
     display: flex;
     flex-direction: column;
@@ -33,19 +31,15 @@
     @include tablet {
         width: 30rem;
     }
-
     &__form {
         width: 100%;
-
         @include tablet {
             width: auto;
         }
     }
-
     &__signup--title {
         @include subheader-mobile;
         margin-top: 0rem;
-
         @include tablet {
             @include subheader;
         }
@@ -54,17 +48,14 @@
         width: 100%;
         @include label-buttons-mobile;
         @include button-style;
-
         &:hover {
             background-color: $Black;
             color: $White;
             cursor: pointer;
         }
-
         @include tablet {
             @include label-buttons;
         }
-
     }
     &__divider {
         margin-top: 1rem;
@@ -93,7 +84,6 @@
     &__state {
         @include body-medium-mobile;
         width: 80%;
-
         @include tablet {
             @include body-medium;
         }

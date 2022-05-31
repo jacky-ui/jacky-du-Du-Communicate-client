@@ -4,14 +4,12 @@ import jwt_decode from "jwt-decode";
 import './Navigation.scss';
 import { Component } from 'react';
 import DropDownNav from '../DropDownNav/DropDownNav';
-
 class Navigation extends Component {
     state = {
         profile: null,
         id: null,
         showMenu: false
     }
-
     componentDidMount = () => {
         const token = sessionStorage.getItem("token");
         const decodeToken = jwt_decode(token);
@@ -19,7 +17,6 @@ class Navigation extends Component {
         this.setState ({ profile: profilePicture });
         this.setState ({ id: id });
     }
-
     onClickMenu = () => {
         this.setState ({ showMenu: !this.state.showMenu });
     }
@@ -32,7 +29,6 @@ class Navigation extends Component {
                 </div>
             )
         }
-
         return (
             <header>
                 <nav className="nav">
@@ -59,7 +55,7 @@ class Navigation extends Component {
                             className="nav__items--dropdwn"
                             onClick={this.onClickMenu}
                         />
-                        <div className={`${this.state.showMenu ? "nav__dropdown--hide" : "nav__dropdown--show" }`}>
+                        <div className={`${this.state.showMenu ? "nav__dropdown--show" : "nav__dropdown--hide" }`}>
                             <DropDownNav handleLogout={this.props.handleLogout}/>
                         </div>
                     </div>
@@ -68,5 +64,4 @@ class Navigation extends Component {
         )
     }
 };
-
 export default Navigation;

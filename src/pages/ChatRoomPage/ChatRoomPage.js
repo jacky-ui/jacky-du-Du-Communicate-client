@@ -67,6 +67,7 @@ class ChatRoomPage extends Component {
                 <div className="chatroom__contain">
                     <section className="chatroom">
                         <div className="chatroom__members">
+                            <h3 className="chatroom__header--mobile">Active</h3>
                             <h3 className="chatroom__header">Chat members in this room</h3>
                             <Members activeMembers={this.state.activeMembers}/>
                         </div>

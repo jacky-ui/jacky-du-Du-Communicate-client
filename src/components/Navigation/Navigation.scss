@@ -1,7 +1,6 @@
 @use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-
 .nav {
     display: flex;
     justify-content: space-between;
@@ -9,35 +8,32 @@
     padding: 0.2rem 1rem;
     height: 3.5rem;
     border-bottom: 1px solid $Black;
+    background-color: $Orange;
 
     @include tablet {
         padding: 0.5rem 3rem;
     }
-
     &__logo {
         @include subheader-mobile;
         margin: 0rem;
         color: black;
         white-space: nowrap;
-
         @include tablet {
             @include page-header;
         }
     }
-
     &__link--underline {
         text-decoration: none;
     }
-
     &__items {
         display: flex;
         align-items: center;
         gap: 1rem;
-
         &--home {
             display: none;
 
             @include tablet {
+                display: none;
                 display: unset;
                 @include subheader;
                 color: black;
@@ -47,32 +43,25 @@
                 text-decoration: underline;
             }
         }
-
         &--profileimg {
             display: block;
             @include icons;
             border-radius: 50%;
             object-fit: cover;
         }
-
         &--chat {
             display: none;
-
             &:hover {
                 text-decoration: underline;
             }
-
             @include tablet {
                 display: unset;
                 @include subheader;
                 color: black;
             }
-
         }
-
         &--dropdwn {
             @include icons;
-
             @include tablet {
                 display: none;
             }
@@ -81,6 +70,8 @@
     &__dropdown--show {
         display: unset;
         position: absolute;
+        border: 1px solid $Black;
+        border-radius: 4px;
         right: 0;
         top: 3.5rem;
     }

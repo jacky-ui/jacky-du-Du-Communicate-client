@@ -21,6 +21,8 @@
         border: 1px solid #ccc;
         border-radius: 0.5rem;
         padding: 0.5rem;
+        @include body-medium;
+        width: 15rem;
         width: 100%;
 
         @include tablet {
