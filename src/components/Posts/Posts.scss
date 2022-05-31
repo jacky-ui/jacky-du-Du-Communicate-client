@@ -34,12 +34,20 @@
         }
 
         &--head {
-            @include smallheader;
+            @include smallheader-mobile;
+
+            @include tablet {
+                @include smallheader;
+            }
         }
 
         &--comment {
-            @include body-medium;
             margin-bottom: 0rem;
+            @include body-medium-mobile;
+
+            @include tablet {
+                @include body-medium;
+            }
         }
     }
 
