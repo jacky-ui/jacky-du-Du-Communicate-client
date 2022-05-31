@@ -11,8 +11,12 @@
         @include tablet {
             display: flex;
             flex-direction: column;
-            padding: 0rem 6rem;
+            padding: 0rem 2rem;
             width: 100%;
+        }
+
+        @include desktop {
+            padding: 0rem 6rem;
         }
 
         &--bg {
