@@ -47,6 +47,7 @@
 
         &--commented {
             @include body-medium-mobile;
+            background-color: $Blue;
             color: $White;
             border: 1px solid $Black;
             border-radius: 4px;
@@ -54,7 +55,6 @@
 
             @include tablet {
                 @include body-medium;
-                background-color: $Blue;
                 width: 12rem;
             }
         }
