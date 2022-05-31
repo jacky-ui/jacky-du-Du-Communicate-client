@@ -4,7 +4,11 @@
 
 .chatroom {
     display: flex;
-    width: 80%;
+    width: 100%;
+
+    @include tablet {
+        width: 80%;
+    }
 
 
     &__contain {
@@ -12,8 +16,21 @@
     }
 
     &__header {
-        @include subheader;
-        text-align: center;
+        display: none;
+
+        @include tablet {
+            @include subheader;
+            display: unset;
+            text-align: center;
+        }
+
+        &--mobile {
+            @include subheader-mobile;
+
+            @include tablet {
+                display: none;
+            }
+        }
     }
 
     &__members {
@@ -26,9 +43,13 @@
     }
 
     &__room {
-        padding: 0rem 1rem;
-        width: 70%;
         border-right: 1px solid $Black;
         border-left: 1px solid $Black;
+        padding: 0rem 1rem;
+        width: 100%;
+
+        @include tablet {
+            width: 70%;
+        }
     }
 }
