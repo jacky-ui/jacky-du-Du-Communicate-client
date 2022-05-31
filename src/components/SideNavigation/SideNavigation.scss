@@ -25,7 +25,7 @@
             align-items: center;
             gap: 1rem;
             @include subheader;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             width: 90%;
             padding: 0.5rem;
 
@@ -35,9 +35,17 @@
                 cursor: pointer;
             }
         }
+
+        &--link {
+            text-decoration: none;
+        }
     }
 }
 
 .icons--sizing {
     @include icons;
+}
+
+.icon__about {
+    margin-right: 1rem;
 }
