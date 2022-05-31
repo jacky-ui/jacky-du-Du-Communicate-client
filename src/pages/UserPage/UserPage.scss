@@ -6,15 +6,24 @@
     display: flex;
 
     &__contain {
-        display: flex;
-        flex-direction: column;
-        padding: 0rem 6rem;
-        width: 100%;
+        margin: 0 auto;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            padding: 0rem 6rem;
+            width: 100%;
+        }
 
         &--bg {
             background-color: $Black;
             width: 100%;
-            height: 50%;
+            height: 4rem;
+
+            @include tablet {
+                width: 100%;
+                height: 50%;
+            }
         }
     }
     &__info {
@@ -33,12 +42,20 @@
         }
 
         &--username {
-            @include subheader;
+            @include subheader-mobile;
+
+            @include tablet {
+                @include subheader;
+            }
         }
     }
 
     &__posts {
-        @include page-header;
+        @include page-header-mobile;
         text-align: center;
+
+        @include tablet {
+            @include page-header;
+        }
     }
 }
