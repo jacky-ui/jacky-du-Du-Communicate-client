@@ -11,8 +11,12 @@
     &__container {
 
         &--header {
-            @include subheader;
+            @include subheader-mobile;
             text-align: center;
+
+            @include tablet {
+                @include subheader;
+            }
         }
 
         &--receive {
@@ -28,36 +32,43 @@
         }
 
         &--comment {
-            @include body-medium;
+            @include body-medium-mobile;
             background-color: $Orange;
             color: $Black;
             border: 1px solid $Black;
             border-radius: 4px;
-            width: 12rem;
             padding: 0.5rem;
+
+            @include tablet {
+                @include body-medium;
+                width: 12rem;
+            }
         }
 
         &--commented {
-            @include body-medium;
-            background-color: $Blue;
+            @include body-medium-mobile;
             color: $White;
             border: 1px solid $Black;
             border-radius: 4px;
-            width: 12rem;
             padding: 0.5rem;
+
+            @include tablet {
+                @include body-medium;
+                background-color: $Blue;
+                width: 12rem;
+            }
         }
 
         &--username {
-            @include smallheader;
+            @include smallheader-mobile;
             font-size: 0.8rem;
             margin-bottom: 0.5rem;
             display: block;
-        }
 
-        // &--overflow {
-        //     height: 100%;
-        //     overflow-y: scroll;
-        // }
+            @include tablet {
+                @include smallheader;
+            }
+        }
     }
 
     &__form {
@@ -65,30 +76,49 @@
         justify-content: space-between;
 
         &--input {
+            @include body-medium-mobile;
             border: 1px solid #ccc;
             border-radius: 0.5rem;
             padding: 0.5rem;
-            @include body-medium;
-            width: 85%;
+            width: 100%;
+
+            @include tablet {
+                @include body-medium;
+                width: 85%;
+            }
         }
 
         &--btn {
-            @include label-buttons;
+            @include label-buttons-mobile;
             background-color: $Orange;
             color: $White;
             border-radius: 4px;
             border-style: none;
-            width: 15%;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-
+            
             &:hover {
                 background-color: $Black;
                 cursor: pointer;
             }
+
+            @include tablet {
+                @include label-buttons;
+                width: 15%;
+            }
         }
+    }
+}
+
+.icon__send--mobile {
+    width: 1rem;
+    height: 1rem;
+
+    @include tablet {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
 

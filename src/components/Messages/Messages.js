@@ -69,7 +69,7 @@ class Messages extends Component {
                     <form className="message__form" onSubmit={this.handleSend}>
                         <input className="message__form--input" type="text" placeholder="Write a Message..." name="post"/>
                         <button className="message__form--btn">
-                        <img className="icons--sizing icons--hover" src={sendIcon}/>SEND
+                        <img className="icons--hover icons icon__send--mobile" src={sendIcon}/>SEND
                         </button>
                     </form>
             </section>
