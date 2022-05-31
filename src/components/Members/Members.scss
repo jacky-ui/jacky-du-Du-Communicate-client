@@ -17,6 +17,11 @@
     }
 
     &__username {
-        @include smallheader;
+        display: none;
+
+        @include tablet {
+            display: unset;
+            @include smallheader;
+        }
     }
 }
