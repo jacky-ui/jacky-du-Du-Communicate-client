@@ -7,6 +7,7 @@
 
     &__contain {
         margin: 0 auto;
+        width: 80%;
 
         @include tablet {
             display: flex;
@@ -62,4 +63,43 @@
             @include page-header;
         }
     }
+
+    &__btn--color {
+        @include button-style;
+        @include label-buttons-mobile;
+
+        &:hover {
+            background-color: $Black;
+            cursor: pointer;
+        }
+
+        @include tablet {
+            @include label-buttons;
+        }
+    }
+}
+
+// Change user background color
+.Red {
+    background-color: red;
+}
+
+.Black {
+    background-color: Black;
+}
+
+.Blue {
+    background-color: blue;
+}
+
+.Pink {
+    background-color: pink;
+}
+
+.Green {
+    background-color: green;
+}
+
+.Yellow {
+    background-color: yellow;
 }

@@ -15,6 +15,7 @@ class UserPage extends Component {
         userComment: [],
         username: null,
         profile: null,
+        userColor: null
     }
 
     componentDidMount = () => {
@@ -51,6 +52,16 @@ class UserPage extends Component {
         })
     }
 
+    // componentDidUpdate = () => {
+    //     this.handleColorChange();
+    // }
+    
+    handleColorChange = () => {
+        const colors = ["Blue", "Black", "Red", "Pink", "Green", "Yellow"];
+        let changedColor = colors[Math.floor(Math.random()*colors.length)]
+        this.setState ({ userColor: changedColor })
+    }
+
     render() {
         if (this.state.failedLogin) {
             return(
@@ -62,10 +73,11 @@ class UserPage extends Component {
                 <Navigation />
                 <main className="user">
                     <section className="user__contain">
-                        <div className="user__contain--bg"></div>
+                        <div className={`user__contain--bg ${this.state.userColor}`}></div>
                         <div className="user__info">
                             <img src={this.state.profile} className="user__info--profile"/>
                             <span className="user__info--username">{this.state.username}</span>
+                            <button className="user__btn--color" onClick={this.handleColorChange}>Change Color!</button>
                         </div>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
