@@ -6,15 +6,29 @@
     display: flex;
 
     &__contain {
-        display: flex;
-        flex-direction: column;
-        padding: 0rem 6rem;
-        width: 100%;
+        margin: 0 auto;
+        width: 80%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            padding: 0rem 2rem;
+            width: 100%;
+        }
+
+        @include desktop {
+            padding: 0rem 6rem;
+        }
 
         &--bg {
             background-color: $Black;
             width: 100%;
-            height: 50%;
+            height: 4rem;
+
+            @include tablet {
+                width: 100%;
+                height: 50%;
+            }
         }
     }
     &__info {
@@ -33,12 +47,59 @@
         }
 
         &--username {
-            @include subheader;
+            @include subheader-mobile;
+
+            @include tablet {
+                @include subheader;
+            }
         }
     }
 
     &__posts {
-        @include page-header;
+        @include page-header-mobile;
         text-align: center;
+
+        @include tablet {
+            @include page-header;
+        }
     }
+
+    &__btn--color {
+        @include button-style;
+        @include label-buttons-mobile;
+
+        &:hover {
+            background-color: $Black;
+            cursor: pointer;
+        }
+
+        @include tablet {
+            @include label-buttons;
+        }
+    }
+}
+
+// Change user background color
+.Red {
+    background-color: red;
+}
+
+.Black {
+    background-color: Black;
+}
+
+.Blue {
+    background-color: blue;
+}
+
+.Pink {
+    background-color: pink;
+}
+
+.Green {
+    background-color: green;
+}
+
+.Yellow {
+    background-color: yellow;
 }

@@ -8,12 +8,16 @@
     @include tablet {
         display: unset;
         background-color: $Orange;
-        width: 20%;
+        width: 25%;
         border-left: 1px solid $Black;
         border-bottom: 1px solid $Black;
         border-radius: 4px;
         padding-left: 1rem;
         height: 20rem;
+
+        @include desktop {
+            width: 20%;
+        }
     }
 
     &__lists {
@@ -25,19 +29,29 @@
             align-items: center;
             gap: 1rem;
             @include subheader;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             width: 90%;
             padding: 0.5rem;
 
             &:hover {
-                border: 1px solid $Orange;
+                border: 1px solid $Black;
                 border-radius: 4px;
                 cursor: pointer;
             }
+        }
+
+        &--link {
+            text-decoration: none;
+            white-space: nowrap;
+            color: $Black;
         }
     }
 }
 
 .icons--sizing {
     @include icons;
+}
+
+.icon__about {
+    margin-right: 1rem;
 }
