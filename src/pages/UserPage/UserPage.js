@@ -15,7 +15,8 @@ class UserPage extends Component {
         userComment: [],
         username: null,
         profile: null,
-        userColor: null
+        userColor: null,
+        colorButton: null
     }
 
     componentDidMount = () => {
@@ -62,8 +63,8 @@ class UserPage extends Component {
 
     hideButton = (id, paramId) => {
         if (id !== paramId) {
-            return console.log("Failed");
-        }   return console.log("Hello world");
+            return this.setState ({ colorButton: false });
+        }   return this.setState ({ colorButton: true });
     }
 
     render() {
@@ -81,7 +82,7 @@ class UserPage extends Component {
                         <div className="user__info">
                             <img src={this.state.profile} className="user__info--profile"/>
                             <span className="user__info--username">{this.state.username}</span>
-                            <button className="user__btn--color" onClick={this.handleColorChange}>Change Color!</button>
+                            <button className={`${this.state.colorButton ? "user__btn--color" : "user__btn--hide"}`} onClick={this.handleColorChange}>Change Color!</button>
                         </div>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
