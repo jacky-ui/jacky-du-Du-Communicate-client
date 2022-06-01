@@ -51,10 +51,6 @@ class UserPage extends Component {
             failedLogin: true
         })
     }
-
-    // componentDidUpdate = () => {
-    //     this.handleColorChange();
-    // }
     
     handleColorChange = () => {
         const colors = ["Blue", "Black", "Red", "Pink", "Green", "Yellow"];
