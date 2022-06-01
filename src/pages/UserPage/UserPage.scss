@@ -77,6 +77,10 @@
             @include label-buttons;
         }
     }
+
+    &__btn--hide {
+        display: none;
+    }
 }
 
 // Change user background color
