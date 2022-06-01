@@ -42,6 +42,8 @@ class UserPage extends Component {
                 this.setState({ userComment: userComment });
                 this.setState({ profile: userComment[0].profile })
             })
+
+        this.hideButton(decodedUser.id, this.props.match.params.id)
     }
 
     handleLogout = () => {
@@ -56,6 +58,12 @@ class UserPage extends Component {
         const colors = ["Blue", "Black", "Red", "Pink", "Green", "Yellow"];
         let changedColor = colors[Math.floor(Math.random()*colors.length)]
         this.setState ({ userColor: changedColor })
+    }
+
+    hideButton = (id, paramId) => {
+        if (id !== paramId) {
+            return console.log("Failed");
+        }   return console.log("Hello world");
     }
 
     render() {
