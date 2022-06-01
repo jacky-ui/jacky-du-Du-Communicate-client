@@ -51,6 +51,10 @@ class UserPage extends Component {
         })
     }
 
+    handleColorChange = () => {
+        console.log("hello world");
+    }
+
     render() {
         if (this.state.failedLogin) {
             return(
@@ -66,6 +70,7 @@ class UserPage extends Component {
                         <div className="user__info">
                             <img src={this.state.profile} className="user__info--profile"/>
                             <span className="user__info--username">{this.state.username}</span>
+                            <button className="user__btn--color">Change Color!</button>
                         </div>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>

@@ -7,6 +7,7 @@
 
     &__contain {
         margin: 0 auto;
+        width: 80%;
 
         @include tablet {
             display: flex;
@@ -60,6 +61,20 @@
 
         @include tablet {
             @include page-header;
+        }
+    }
+
+    &__btn--color {
+        @include button-style;
+        @include label-buttons-mobile;
+
+        &:hover {
+            background-color: $Black;
+            cursor: pointer;
+        }
+
+        @include tablet {
+            @include label-buttons;
         }
     }
 }
