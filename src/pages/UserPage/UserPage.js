@@ -40,6 +40,7 @@ class UserPage extends Component {
             })
             .then((res) => {
                 const userComment = res.data;
+                console.log(res.data);
                 this.setState({ userComment: userComment });
                 this.setState({ profile: userComment[0].profile })
             })
@@ -88,7 +89,7 @@ class UserPage extends Component {
                     <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
                 <h1 className="user__posts">POST HISTORY</h1>
-                {this.state.userComment.map((comment) => {
+                {/*{this.state.userComment.map((comment) => {
                     return (
                         <Posts 
                             id={comment.id}
@@ -99,7 +100,7 @@ class UserPage extends Component {
                             key={comment.commentId}
                         />
                     )
-                })}
+                })}*/}
             </>
         )
     }
