@@ -41,7 +41,6 @@ class UserPage extends Component {
             })
             .then((res) => {
                 const userComment = res.data;
-                console.log(res.data);
 
                 if(res.data[0].message === "No posts yet!") {
                     this.setState({ profile: userComment[0].profile });
