@@ -16,7 +16,8 @@ class UserPage extends Component {
         username: null,
         profile: null,
         userColor: null,
-        colorButton: null
+        colorButton: null,
+        noPosts: false
     }
 
     componentDidMount = () => {
@@ -41,6 +42,12 @@ class UserPage extends Component {
             .then((res) => {
                 const userComment = res.data;
                 console.log(res.data);
+
+                if(res.data[0].message === "No posts yet!") {
+                    this.setState({ profile: userComment[0].profile });
+                    this.setState({ noPosts: true });
+                }
+
                 this.setState({ userComment: userComment });
                 this.setState({ profile: userComment[0].profile })
             })
@@ -89,7 +96,7 @@ class UserPage extends Component {
                     <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
                 <h1 className="user__posts">POST HISTORY</h1>
-                {/*{this.state.userComment.map((comment) => {
+                {this.state.noPosts ? <h2 className="user__posts--empty">No Posts Yet!</h2> : this.state.userComment.map((comment) => {
                     return (
                         <Posts 
                             id={comment.id}
@@ -100,7 +107,7 @@ class UserPage extends Component {
                             key={comment.commentId}
                         />
                     )
-                })}*/}
+                })}
             </>
         )
     }
