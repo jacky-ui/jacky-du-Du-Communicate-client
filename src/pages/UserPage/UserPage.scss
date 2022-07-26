@@ -62,6 +62,15 @@
         @include tablet {
             @include page-header;
         }
+
+        &--empty {
+            @include subheader-mobile;
+            text-align: center;
+
+            @include tablet {
+                @include subheader;
+            }
+        }
     }
 
     &__btn--color {
@@ -76,6 +85,10 @@
         @include tablet {
             @include label-buttons;
         }
+    }
+
+    &__btn--hide {
+        display: none;
     }
 }
 
