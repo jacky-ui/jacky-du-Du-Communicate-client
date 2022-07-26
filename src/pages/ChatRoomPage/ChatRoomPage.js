@@ -6,9 +6,9 @@ import Members from "../../components/Members/Members";
 import Navigation from "../../components/Navigation/Navigation";
 import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import io, { Socket } from "socket.io-client";
+import "./ChatRoomPage.scss";
 const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 let socket = io.connect(`${REACT_APP_URL}${REACT_APP_PORT}`);
-import "./ChatRoomPage.scss";
 
 class ChatRoomPage extends Component {
     state = {
