@@ -6,9 +6,9 @@ import Members from "../../components/Members/Members";
 import Navigation from "../../components/Navigation/Navigation";
 import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import io, { Socket } from "socket.io-client";
+import "./ChatRoomPage.scss";
 const { REACT_APP_URL, REACT_APP_PORT } = process.env;
 let socket = io.connect(`${REACT_APP_URL}${REACT_APP_PORT}`);
-import "./ChatRoomPage.scss";
 
 class ChatRoomPage extends Component {
     state = {
@@ -67,6 +67,7 @@ class ChatRoomPage extends Component {
                 <div className="chatroom__contain">
                     <section className="chatroom">
                         <div className="chatroom__members">
+                            <h3 className="chatroom__header--mobile">Active</h3>
                             <h3 className="chatroom__header">Chat members in this room</h3>
                             <Members activeMembers={this.state.activeMembers}/>
                         </div>
