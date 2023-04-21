@@ -1,14 +1,17 @@
-@use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
 .posts {
-    display: flex;
     border: 1px solid $Orange;
+    display: flex;
     padding: 0.5rem;
-    width: 25rem;
-    margin: 0 auto 1rem auto;
+    width: 95%;
     gap: 1rem;
+    margin: 0 auto 1rem auto;
+    
+    @include tablet {
+        width: 25rem;
+    }
 
     &__profile {
         // width: 20%;
@@ -30,12 +33,20 @@
         }
 
         &--head {
-            @include smallheader;
+            @include smallheader-mobile;
+
+            @include tablet {
+                @include smallheader;
+            }
         }
 
         &--comment {
-            @include body-medium;
             margin-bottom: 0rem;
+            @include body-medium-mobile;
+
+            @include tablet {
+                @include body-medium;
+            }
         }
     }
 

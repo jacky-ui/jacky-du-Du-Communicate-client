@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.aboutme {
+
+    @include tablet {
+        display: flex;
+    }
+
+    &__container {
+        padding: 0 1rem;
+
+        @include tablet {
+            width: 80%;
+        }
+    }
+
+    &__header {
+        @include page-header-mobile;
+        text-align: center;
+
+        @include tablet {
+            @include page-header;
+        }
+    }
+    &__paragraph {
+        @include body-large-mobile;
+
+        @include tablet {
+            @include body-large-desktop;
+        }
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        &--icons {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}

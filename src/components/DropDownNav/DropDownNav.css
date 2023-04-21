@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.dropdown {
+  position: absolute;
+  background-color: #FF7847;
+  border: 1px solid #13182C;
+  border-radius: 4px;
+  right: 0;
+  width: 10rem;
+}
+.dropdown__lists {
+  list-style: none;
+  padding: 0rem;
+  margin-left: 1rem;
+}
+.dropdown__lists--item {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  font-family: "Titillium";
+  padding: 0.5rem;
+}
+.dropdown__lists--item:hover {
+  border: 1px solid #13182C;
+}
+.dropdown__logout {
+  display: flex;
+  gap: 1rem;
+}
+.dropdown__logout--icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}/*# sourceMappingURL=DropDownNav.css.map */

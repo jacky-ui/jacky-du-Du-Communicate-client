@@ -1,4 +1,3 @@
-@use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
@@ -7,11 +6,16 @@
 }
 
 .popup {
-    padding: 1rem 1rem;
-    width: 40rem;
+    width: 100%;
     height: 24rem;
     background-color: $White;
     border-radius: 4px;
+    padding: 0.5rem;
+
+    @include tablet {
+        padding: 1rem;
+        width: 40rem;
+    }
 
     &__close {
         position: absolute;
@@ -25,14 +29,19 @@
             color: $White;
             cursor: pointer;
         }
+
     }
 
     &__title {
-        @include subheader;
+        @include subheader-mobile;
         margin-top: 0rem;
         padding-bottom: 1rem;
         text-align: center;
         border-bottom: 1px solid $Orange;
+
+        @include tablet {
+            @include subheader;
+        }
     }
 
     &__comments {
@@ -49,8 +58,13 @@
 
         &--profile {
             border-radius: 50%;
-            height: 4rem;
-            width: 4rem;
+            width: 2.5rem;
+            height: 2.5rem;
+
+            @include tablet {
+                height: 4rem;
+                width: 4rem;
+            }
         }
 
         &--comment {
@@ -61,11 +75,14 @@
         }
 
         &--username {
-            @include subheader;
+            @include subheader-mobile;
+
+            @include tablet {
+                @include subheader;
+            }
         }
 
         &--btn {
-            @include label-buttons;
             background-color: $Orange;
             color: $White;
             border-style: none;
@@ -75,6 +92,10 @@
             &:hover {
                 background-color: $Black;
                 cursor: pointer;
+            }
+
+            @include tablet {
+                @include label-buttons;
             }
         }
     }

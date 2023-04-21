@@ -1,4 +1,3 @@
-@use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
@@ -17,6 +16,11 @@
     }
 
     &__username {
-        @include smallheader;
+        display: none;
+
+        @include tablet {
+            display: unset;
+            @include smallheader;
+        }
     }
 }

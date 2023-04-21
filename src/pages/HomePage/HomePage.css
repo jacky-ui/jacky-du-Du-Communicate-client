@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  margin: 0rem;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.greetings {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  font-family: "Titillium";
+}
+
+.contain {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .contain {
+    display: flex;
+    width: 100%;
+  }
+}
+.contain__comments {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .contain__main {
+    width: 80%;
+  }
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid #FF7847;
+  border-radius: 4px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  margin: 0 auto 2rem auto;
+}
+@media screen and (min-width: 768px) {
+  .comments {
+    margin: 0 auto 3rem auto;
+    padding: 1rem 1rem;
+  }
+}
+.comments__profile {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.comments__comment {
+  border-radius: 5px;
+  border-style: 1px;
+  width: 15rem;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.375rem;
+  font-family: "Titillium";
+}
+
+.shortcut {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  z-index: 99;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  font-family: "Titillium";
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #FF7847;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.shortcut:hover {
+  background-color: #13182C;
+}/*# sourceMappingURL=HomePage.css.map */

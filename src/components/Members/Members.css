@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.member {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid #FF7847;
+  padding: 0.5rem;
+  margin: 1rem 0rem;
+}
+.member__profile {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.member__username {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .member__username {
+    display: unset;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    font-family: "Titillium";
+  }
+}/*# sourceMappingURL=Members.css.map */

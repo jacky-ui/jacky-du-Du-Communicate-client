@@ -1,7 +1,6 @@
 @use "../../styles/global.scss" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-
 .signup {
     display: flex;
     flex-direction: column;
@@ -12,16 +11,33 @@
     margin-left: auto;
     margin-right: auto;
     width: 30rem;
+    width: 100%;
+
+    @include tablet {
+        width: 30rem;
+    }
 
     &__form {
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+        }
+
         &--btn {
             @include button-style;
             width: 100%;
+            @include button-style;
+            @include label-buttons-mobile;
 
             &:hover {
                 background-color: $Black;
                 color: $White;
                 cursor: pointer;
+            }
+
+            @include tablet {
+                @include label-buttons;
             }
         }
 
@@ -33,7 +49,6 @@
             position: absolute;
             z-index: -1;
         }
-
         &--lbl {
             @include button-style;
             background-color: $Blue;
@@ -42,7 +57,6 @@
             width: 100%;
             padding: 0.6rem 0rem;
             margin-bottom: 1rem;
-
             &:hover {
                 background-color: $Black;
                 cursor: pointer;
@@ -53,13 +67,23 @@
     &__state {
         @include body-medium;
         width: 80%;
+        @include body-medium-mobile;
+
+        @include tablet {
+            @include body-medium;
+        }
     } 
 }
 
 .link__underline {
     @include smallheader;
+    @include smallheader-mobile;
     text-decoration: none;
     position: absolute;
     right: 0.5rem;
     bottom: 0;
-}
+
+    @include tablet {
+        @include smallheader;
+    }
+} 

@@ -15,6 +15,9 @@ class UserPage extends Component {
         userComment: [],
         username: null,
         profile: null,
+        userColor: null,
+        colorButton: null,
+        noPosts: false
     }
 
     componentDidMount = () => {
@@ -38,9 +41,17 @@ class UserPage extends Component {
             })
             .then((res) => {
                 const userComment = res.data;
+
+                if(res.data[0].message === "No posts yet!") {
+                    this.setState({ profile: userComment[0].profile });
+                    this.setState({ noPosts: true });
+                }
+
                 this.setState({ userComment: userComment });
                 this.setState({ profile: userComment[0].profile })
             })
+
+        this.hideButton(decodedUser.id, this.props.match.params.id)
     }
 
     handleLogout = () => {
@@ -49,6 +60,18 @@ class UserPage extends Component {
             user: null,
             failedLogin: true
         })
+    }
+    
+    handleColorChange = () => {
+        const colors = ["Blue", "Black", "Red", "Pink", "Green", "Yellow"];
+        let changedColor = colors[Math.floor(Math.random()*colors.length)]
+        this.setState ({ userColor: changedColor })
+    }
+
+    hideButton = (id, paramId) => {
+        if (id !== paramId) {
+            return this.setState ({ colorButton: false });
+        }   return this.setState ({ colorButton: true });
     }
 
     render() {
@@ -62,16 +85,17 @@ class UserPage extends Component {
                 <Navigation />
                 <main className="user">
                     <section className="user__contain">
-                        <div className="user__contain--bg"></div>
+                        <div className={`user__contain--bg ${this.state.userColor}`}></div>
                         <div className="user__info">
                             <img src={this.state.profile} className="user__info--profile"/>
                             <span className="user__info--username">{this.state.username}</span>
+                            <button className={`${this.state.colorButton ? "user__btn--color" : "user__btn--hide"}`} onClick={this.handleColorChange}>Change Color!</button>
                         </div>
                     </section>
                     <SideNavigation handleLogout={this.handleLogout}/>
                 </main>
                 <h1 className="user__posts">POST HISTORY</h1>
-                {this.state.userComment.map((comment) => {
+                {this.state.noPosts ? <h2 className="user__posts--empty">No Posts Yet!</h2> : this.state.userComment.map((comment) => {
                     return (
                         <Posts 
                             id={comment.id}
