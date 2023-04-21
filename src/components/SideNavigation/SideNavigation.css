@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.side {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .side {
+    display: unset;
+    background-color: #FF7847;
+    width: 25%;
+    border-left: 1px solid #13182C;
+    border-bottom: 1px solid #13182C;
+    border-radius: 4px;
+    padding-left: 1rem;
+    height: 20rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .side {
+    width: 20%;
+  }
+}
+.side__lists {
+  list-style: none;
+  padding: 0rem;
+}
+.side__lists--item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  font-family: "Titillium";
+  margin: 1.5rem 0;
+  width: 90%;
+  padding: 0.5rem;
+}
+.side__lists--item:hover {
+  border: 1px solid #13182C;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.side__lists--link {
+  text-decoration: none;
+  white-space: nowrap;
+  color: #13182C;
+}
+
+.icons--sizing {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon__about {
+  margin-right: 1rem;
+}/*# sourceMappingURL=SideNavigation.css.map */

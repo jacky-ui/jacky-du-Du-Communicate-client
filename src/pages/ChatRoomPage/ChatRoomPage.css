@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  margin: 0rem;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.chatroom {
+  display: flex;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .chatroom {
+    width: 80%;
+  }
+}
+.chatroom__contain {
+  display: flex;
+}
+.chatroom__header {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .chatroom__header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2rem;
+    font-family: "Titillium";
+    display: unset;
+    text-align: center;
+  }
+}
+.chatroom__header--mobile {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+  font-family: "Titillium";
+}
+@media screen and (min-width: 768px) {
+  .chatroom__header--mobile {
+    display: none;
+  }
+}
+.chatroom__members {
+  padding: 0rem 0.5rem;
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #13182C;
+  border-bottom: 1px solid #13182C;
+  border-radius: 4px;
+}
+.chatroom__room {
+  border-right: 1px solid #13182C;
+  border-left: 1px solid #13182C;
+  padding: 0rem 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .chatroom__room {
+    width: 70%;
+  }
+}/*# sourceMappingURL=ChatRoomPage.css.map */

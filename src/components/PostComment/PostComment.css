@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.popup-overlay {
+  background-color: rgba(19, 24, 44, 0.7);
+}
+
+.popup {
+  width: 100%;
+  height: 24rem;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .popup {
+    padding: 1rem;
+    width: 40rem;
+  }
+}
+.popup__close {
+  position: absolute;
+  right: 2rem;
+  background-color: #FFFFFF;
+  border: 1px solid #FF7847;
+  border-radius: 4px;
+}
+.popup__close:hover {
+  background-color: #13182C;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.popup__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+  font-family: "Titillium";
+  margin-top: 0rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #FF7847;
+}
+@media screen and (min-width: 768px) {
+  .popup__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2rem;
+    font-family: "Titillium";
+  }
+}
+.popup__comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+.popup__comments--container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.popup__comments--profile {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .popup__comments--profile {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+.popup__comments--comment {
+  width: 100%;
+  height: 8rem;
+  resize: none;
+  border-radius: 4px;
+}
+.popup__comments--username {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+  font-family: "Titillium";
+}
+@media screen and (min-width: 768px) {
+  .popup__comments--username {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2rem;
+    font-family: "Titillium";
+  }
+}
+.popup__comments--btn {
+  background-color: #FF7847;
+  color: #FFFFFF;
+  border-style: none;
+  border-radius: 4px;
+  height: 2.5rem;
+}
+.popup__comments--btn:hover {
+  background-color: #13182C;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .popup__comments--btn {
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1.375rem;
+    font-family: "Titillium";
+  }
+}
+
+.error {
+  background-color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  font-family: "Titillium";
+}/*# sourceMappingURL=PostComment.css.map */

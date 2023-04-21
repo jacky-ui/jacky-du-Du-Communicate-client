@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.item {
+  display: flex;
+  padding: 0rem;
+  align-items: baseline;
+  gap: 1rem;
+}
+.item__link {
+  text-decoration: none;
+}
+.item__icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}/*# sourceMappingURL=DropDownItem.css.map */

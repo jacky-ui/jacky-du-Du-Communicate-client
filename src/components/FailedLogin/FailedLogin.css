@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.failed {
+  margin: 0 auto;
+  width: 30%;
+}
+.failed__message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  font-family: "Titillium";
+}
+.failed__button {
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.375rem;
+  font-family: "Titillium";
+  background-color: #FF7847;
+  color: #FFFFFF;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border-style: none;
+}
+.failed__button:hover {
+  background-color: #13182C;
+  color: #FFFFFF;
+  cursor: pointer;
+}/*# sourceMappingURL=FailedLogin.css.map */

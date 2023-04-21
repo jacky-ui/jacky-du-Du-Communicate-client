@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.posts {
+  border: 1px solid #FF7847;
+  display: flex;
+  padding: 0.5rem;
+  width: 95%;
+  gap: 1rem;
+  margin: 0 auto 1rem auto;
+}
+@media screen and (min-width: 768px) {
+  .posts {
+    width: 25rem;
+  }
+}
+.posts__profile--sizing {
+  border-radius: 4px;
+  width: 5rem;
+  height: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.posts__comments {
+  width: 100%;
+}
+.posts__comments--info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.posts__comments--head {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  font-family: "Titillium";
+}
+@media screen and (min-width: 768px) {
+  .posts__comments--head {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    font-family: "Titillium";
+  }
+}
+.posts__comments--comment {
+  margin-bottom: 0rem;
+  font-size: 0.813rem;
+  font-weight: normal;
+  line-height: 1.25rem;
+  font-family: "Titillium";
+}
+@media screen and (min-width: 768px) {
+  .posts__comments--comment {
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.375rem;
+    font-family: "Titillium";
+  }
+}
+.posts__icons {
+  display: flex;
+  gap: 1rem;
+}
+.posts__icons--sizing {
+  width: 1rem;
+  height: 1rem;
+}/*# sourceMappingURL=Posts.css.map */

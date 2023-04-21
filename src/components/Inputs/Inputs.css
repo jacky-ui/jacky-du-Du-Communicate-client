@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+.inputs__label {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  font-family: "Titillium";
+}
+@media screen and (min-width: 768px) {
+  .inputs__label {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    font-family: "Titillium";
+  }
+}
+.inputs__text {
+  font-size: 0.813rem;
+  font-weight: normal;
+  line-height: 1.25rem;
+  font-family: "Titillium";
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.375rem;
+  font-family: "Titillium";
+  width: 15rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .inputs__text {
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.375rem;
+    font-family: "Titillium";
+    width: 15rem;
+  }
+}/*# sourceMappingURL=Inputs.css.map */
