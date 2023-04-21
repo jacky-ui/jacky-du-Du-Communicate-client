@@ -99,6 +99,9 @@
     display: none;
   }
 }
+.nav__items--dropdwn:hover {
+  cursor: pointer;
+}
 .nav__dropdown--show {
   display: unset;
   position: absolute;

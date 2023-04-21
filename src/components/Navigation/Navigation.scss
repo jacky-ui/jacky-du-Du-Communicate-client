@@ -64,6 +64,9 @@
             @include tablet {
                 display: none;
             }
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     &__dropdown--show {

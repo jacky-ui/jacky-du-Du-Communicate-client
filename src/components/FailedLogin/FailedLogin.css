@@ -10,14 +10,6 @@
   font-weight: bold;
   font-style: normal;
 }
-body {
-  margin: 0rem;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
 .failed {
   margin: 0 auto;
   width: 30%;
