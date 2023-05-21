@@ -2,6 +2,7 @@
 
 Du-Communicate is a social media platform where users are encouraged to communicate with other active users. Users are able to post comments and chat with other users (More features to be added!).
 
+
 ![image](https://user-images.githubusercontent.com/64509710/171100892-5454994b-34e6-4ade-9b74-5a805b36befe.png)
 
 ## Features
